@@ -1,18 +1,78 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager Instance { get; private set; }
+    public bool IsPaused { get; private set; } = false;
+    public bool ControlsEnabled { get; private set; } = true;
+
+
+    private enum Scenes
     {
-        
+        MainMenu,
+        Checkpoint_Intro,
+        Checkpoint_Race
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+        DontDestroyOnLoad(gameObject);
+
+    }
+
+    void Start()
+    {
+        //StartMainMenu();
+    }
+    public void StartMainMenu()
+    {
+        SceneManager.LoadScene((int)Scenes.MainMenu);
+    }
+    public void StartCheckpointIntro()
+    {
+
+    }
+    public void StartCheckpointRace()
+    {
+
+    }
+
+
+    public void PauseToggle()
+    {
+        if (IsPaused)
+            Unpause();
+        else
+            Pause();
+    }
+    public void SetPauseState(bool state)
+    {
+        if (state)
+            Pause();
+        else
+            Unpause();
+    }
+    private void Pause()
+    {
+        Time.timeScale = 0;
+        IsPaused = true;
+        ControlsEnabled = false;
+    }
+    private void Unpause()
+    {
+        Time.timeScale = 1;
+        IsPaused = false;
+        ControlsEnabled = true;
     }
 }
