@@ -8,15 +8,8 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    [SerializeField] private AudioMixer mixer;
-
-    public AudioMixerGroup SfxMixerGroup;
-    public const string SFX_PARAMETER_NAME = "SfxVolume"; //Name of the audio mixer group's exposed parameter
-    [field: SerializeField, Range(0.0001f, 1f)] public float SfxVolumeSliderValue { get; set; } = 0.8f;
-
-    public AudioMixerGroup MusicMixerGroup;
-    public const string MUSIC_PARAMETER_NAME = "MusicVolume";
-    [field: SerializeField, Range(0.0001f, 1f)] public float MusicVolumeSliderValue { get; set; } = 0.8f;
+    [SerializeField] private AudioMixerGroupSO sfxMixerGroup;
+    [SerializeField] private AudioMixerGroupSO musicMixerGroup;
     [field: Space]
     [field: SerializeField] public Sound[] Sounds { get; set; }
 
@@ -46,22 +39,18 @@ public class AudioManager : MonoBehaviour
             sound.audioSource.loop = sound.Loop;
             if (sound.SoundType == SoundTypes.SFX)
             {
-                sound.audioSource.outputAudioMixerGroup = SfxMixerGroup;
+                sound.audioSource.outputAudioMixerGroup = sfxMixerGroup.MixerGroup;
             }
             else
             {
-                sound.audioSource.outputAudioMixerGroup = MusicMixerGroup;
+                sound.audioSource.outputAudioMixerGroup = musicMixerGroup.MixerGroup;
             }
         }
     }
     private void InitialiseAudioMixer()
     {
-        mixer.SetFloat(SFX_PARAMETER_NAME, ToLogarithmicMixerValue(SfxVolumeSliderValue));
-        mixer.SetFloat(MUSIC_PARAMETER_NAME, ToLogarithmicMixerValue(MusicVolumeSliderValue));
-    }
-    private float ToLogarithmicMixerValue(float value)
-    {
-        return Mathf.Log10(value) * 20;
+        sfxMixerGroup.InitialiseMixerGroupVolume();
+        musicMixerGroup.InitialiseMixerGroupVolume();
     }
 
     private Sound GetSound(SoundNames name)
