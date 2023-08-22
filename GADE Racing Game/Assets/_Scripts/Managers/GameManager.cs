@@ -39,13 +39,14 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene((int)Scenes.MainMenu);
     }
-    public void StartCheckpointIntro()
+    public void StartIntro()
     {
-
+        
     }
-    public void StartCheckpointRace()
+    public void StartRace()
     {
-
+        // Decide which one to start from which intro scene is active
+        // Probably have scriptable objects for each scene with their scene index
     }
 
 

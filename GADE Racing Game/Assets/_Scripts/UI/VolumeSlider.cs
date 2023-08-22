@@ -21,7 +21,7 @@ public class VolumeSlider : MonoBehaviour
         slider.onValueChanged.RemoveAllListeners();
     }
 
-    private void Awake()
+    private void Start() // Called after AudioManager initialises the mixer group volume
     {
         slider.value = audioMixerGroup.VolumeSliderValue;
     }
