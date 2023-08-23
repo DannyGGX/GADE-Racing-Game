@@ -14,10 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Passage:
   - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
-    Text: If you make it rould the course in 1 minute... I'll give you a high five
+    Text: If you make it round the course in 1 minute
+    TextTypeSpeed: 20
+  - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
+    Text: ...
+    TextTypeSpeed: 2
+  - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
+    Text: I'll give you a high five.
+    TextTypeSpeed: 20
   - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
     Text: You think that's much of an incentive for me!
+    TextTypeSpeed: 20
   - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
     Text: I didn't know what else to give you. We only just met
+    TextTypeSpeed: 20
   - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
     Text: Yeah, yeah. Just let me try out the track already!
+    TextTypeSpeed: 30

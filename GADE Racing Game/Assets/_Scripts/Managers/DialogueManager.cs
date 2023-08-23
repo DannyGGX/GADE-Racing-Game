@@ -11,8 +11,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currentSpeakerText;
     [Space]
     [SerializeField] private DialoguePassageSO passageSO;
-    [Tooltip("Measured in letter per second")]
-    [SerializeField] private float textTypeSpeed = 20;
+    //[Tooltip("Measured in letter per second")]
+    //[SerializeField] private float textTypeSpeed = 20;
     [Space]
     [SerializeField] private GameEventSO onDialogueFinished;
 
@@ -79,7 +79,7 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < chars.Length; i++)
         {
             currentSpeakerText.text += chars[i];
-            yield return new WaitForSeconds(ToSecondWaitTime(textTypeSpeed));
+            yield return new WaitForSeconds(ToSecondWaitTime(dialogueEntries.Peek().TextTypeSpeed));
         }
         currentTextFinishedTyping = true;
         dialogueEntries.Dequeue();
