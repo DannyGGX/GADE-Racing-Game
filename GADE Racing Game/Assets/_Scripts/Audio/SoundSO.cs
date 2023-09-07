@@ -31,6 +31,12 @@ public class SoundSO : ScriptableObject
         source.Play();
     }
 
+    public void PlaySound3D(AudioSource source, Vector3 position)
+    {
+        SetSource(source);
+        source.Play();
+    }
+
     private void SetSource(AudioSource source)
     {
         source.clip = clip;
