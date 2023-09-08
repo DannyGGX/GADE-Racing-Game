@@ -16,7 +16,7 @@ public class Checkpoint : MonoBehaviour
 
     private void Awake()
     {
-        mesh = GetComponent<MeshRenderer>();
+        mesh = gameObject.GetComponent<MeshRenderer>();
     }
 
     private void OnTriggerEnter(Collider other)

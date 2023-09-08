@@ -6,11 +6,12 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("UI Elements")]
     [SerializeField] private Image currentSpeakerAvatar;
     [SerializeField] private TextMeshProUGUI currentSpeakerName;
     [SerializeField] private TextMeshProUGUI currentSpeakerText;
     [Space]
-    [SerializeField] private DialoguePassageSO passageSO;
+    [SerializeField] private ConversationSO conversationSO;
     //[Tooltip("Measured in letter per second")]
     //[SerializeField] private float textTypeSpeed = 20;
     [Space]
@@ -49,7 +50,7 @@ public class DialogueManager : MonoBehaviour
     }
     private void CacheDialogue()
     {
-        foreach(DialogueEntry entry in passageSO.Passage)
+        foreach(DialogueEntry entry in conversationSO.Conversation)
         {
             dialogueEntries.Enqueue(entry);
         }

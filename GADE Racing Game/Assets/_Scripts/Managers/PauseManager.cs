@@ -1,21 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class PauseManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static PauseManager Instance { get; private set; }
     public bool IsPaused { get; private set; } = false;
     public bool ControlsEnabled { get; private set; } = true;
-
-
-    private enum Scenes
-    {
-        MainMenu,
-        Checkpoint_Intro,
-        Checkpoint_Race
-    }
 
     private void Awake()
     {
@@ -27,28 +18,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
-        DontDestroyOnLoad(gameObject);
-
     }
-
-    void Start()
-    {
-        //StartMainMenu();
-    }
-    public void StartMainMenu()
-    {
-        SceneManager.LoadScene((int)Scenes.MainMenu);
-    }
-    public void StartIntro()
-    {
-        
-    }
-    public void StartRace()
-    {
-        // Decide which one to start from which intro scene is active
-        // Probably have scriptable objects for each scene with their scene index
-    }
-
 
     public void PauseToggle()
     {
@@ -74,6 +44,15 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         IsPaused = false;
+        ControlsEnabled = true;
+    }
+
+    public void DisableControls() // To disable input before and after race
+    {
+        ControlsEnabled = false;
+    }
+    public void EnableControls()
+    {
         ControlsEnabled = true;
     }
 }
