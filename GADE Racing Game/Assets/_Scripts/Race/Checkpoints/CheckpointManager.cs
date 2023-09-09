@@ -8,7 +8,7 @@ public class CheckpointManager : MonoBehaviour
     private int currentLap = 1;
     [Space]
     [SerializeField] private Checkpoint[] checkpointsArray;
-    private Stack<Checkpoint> checkpoints;
+    private Stack<Checkpoint> checkpointsStack;
 
 
     private void Start()
@@ -22,25 +22,25 @@ public class CheckpointManager : MonoBehaviour
     }
     private void PopulateStack()
     {
-        checkpoints = new Stack<Checkpoint>();
-        foreach (var checkPoint in checkpointsArray)
+        checkpointsStack = new Stack<Checkpoint>();
+        for (int i = checkpointsArray.Length - 1; i >= 0; i--) // Add checkpoints backwards into the stack because of first in last out.
         {
-            checkpoints.Push(checkPoint);
-            checkPoint.SetAsFuture();
+            checkpointsStack.Push(checkpointsArray[i]);
+            checkpointsArray[i].SetAsFuture();
         }
     }
 
     private void SetFirstTargetCheckpoint()
     {
-        checkpoints.Peek().SetAsTarget();
+        checkpointsStack.Peek().SetAsTarget();
     }
 
     public void CurrentTargetCheckpointPassed()
     {
-        if (checkpoints.Count > 1)
+        if (checkpointsStack.Count > 1)
         {
-            checkpoints.Pop();
-            checkpoints.Peek().SetAsTarget();
+            checkpointsStack.Pop();
+            checkpointsStack.Peek().SetAsTarget();
             this.Log("Set next checkpoint");
         }
         else if (currentLap < totalLaps)
