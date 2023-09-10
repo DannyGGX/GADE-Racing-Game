@@ -6,45 +6,73 @@ public class CarController1 : MonoBehaviour
 {
     [SerializeField] private Rigidbody rigidBody;
     [SerializeField] private LayerMask ground; // for wheel collisions
-    [SerializeField] private WheelSO[] wheels = new WheelSO[4];
-    [SerializeField] private InputController inputController;
+    [SerializeField] private CarSO car;
+    //[SerializeField] private InputController inputController;
+    [Space]
+    [SerializeField] private Transform[] frontWheels = new Transform[2];
+    [SerializeField] private Transform[] backWheels = new Transform[2];
+
+    private float accelerationInput;
+    private float steeringInput;
 
     private void Awake()
     {
         
     }
 
-    private void Update() // Detect inputs in here
+    private void Update()
     {
-        
+        DetectInputs();
     }
 
     private void FixedUpdate() // Calculate physics here
     {
-        foreach(var wheel in wheels)
+        foreach (var frontWheel in car.FrontWheels)
         {
-            wheel.IsWheelGrounded = CheckWheelToGroundCollision(wheel.WheelTransform, wheel.Radius);
+            frontWheel.IsWheelGrounded = CheckWheelToGroundCollision(frontWheel.WheelTransform, frontWheel.Radius, out frontWheel.hitInfo);
         }
-        foreach(var wheel in wheels)
+        foreach(var backWheel in car.BackWheels)
         {
-            //Calculate Physics
-            if (wheel.IsWheelGrounded)
+            backWheel.IsWheelGrounded = CheckWheelToGroundCollision(backWheel.WheelTransform, backWheel.Radius, out backWheel.hitInfo);
+        }
+
+        foreach(var frontWheel in car.FrontWheels)
+        {
+            if (frontWheel.IsWheelGrounded)
             {
-
-                if(wheel is FrontWheelSO)
-                {
-
-                }
+                //Calculate Physics
+                ApplySuspensionForce(frontWheel.WheelTransform, frontWheel.SpringStrength, frontWheel.SpringDamper, frontWheel.SpringRestDistance, frontWheel.hitInfo);
+                ApplySteeringAngle(steeringInput, frontWheel.MaxSteeringAngle, frontWheel.WheelTransform);
+                ApplySteeringForce(frontWheel.WheelTransform, frontWheel.TireGripStrength, frontWheel.WheelMass);
+                ApplyAccelerationForce(frontWheel.WheelTransform, transform, accelerationInput, car.TopSpeed, car.PowerCurve);
+            }
+        }
+        foreach (var backWheel in car.BackWheels)
+        {
+            if (backWheel.IsWheelGrounded)
+            {
+                //Calculate Physics
+                ApplySuspensionForce(backWheel.WheelTransform, backWheel.SpringStrength, backWheel.SpringDamper, backWheel.SpringRestDistance, backWheel.hitInfo);
             }
         }
     }
 
-    private bool CheckWheelToGroundCollision(Transform wheelTransform, float wheelRadius)
+    private void DetectInputs()
     {
-        if (Physics.SphereCast(wheelTransform.position, wheelRadius, Vector3.down, out RaycastHit hitinfo, wheelRadius, ground))
+        accelerationInput = Input.GetAxis("Vertical");
+        steeringInput = Input.GetAxis("Horizontal");
+    }
+
+    private bool CheckWheelToGroundCollision(Transform wheelTransform, float wheelRadius, out RaycastHit hitInfo)
+    {
+        if (Physics.SphereCast(wheelTransform.position, wheelRadius, Vector3.down, out hitInfo, wheelRadius, ground))
+        {
             return true;
+        }
         else
+        {
             return false;
+        }
     }
 
     private void ApplySuspensionForce(Transform wheelTransform, float springStrength, float springDamper, float springRestDistance, RaycastHit hit)
@@ -60,7 +88,7 @@ public class CarController1 : MonoBehaviour
         rigidBody.AddForceAtPosition(springDir * force, wheelTransform.position);
     }
 
-    private void ApplySteeringForce(Transform tireTransform, float tireGrip, float tireMass)
+    private void ApplySteeringForce(Transform tireTransform, float tireGrip, float wheelMass)
     {
         Vector3 steeringDir = tireTransform.right;
         Vector3 wheelWorldVelocity = rigidBody.GetPointVelocity(tireTransform.position);
@@ -68,7 +96,7 @@ public class CarController1 : MonoBehaviour
         float steeringVel = Vector3.Dot(steeringDir, wheelWorldVelocity);
         float desiredVelChange = -steeringVel * tireGrip;
         float desiredAcceleration = desiredVelChange / Time.fixedDeltaTime;
-        rigidBody.AddForceAtPosition(steeringDir * tireMass * desiredAcceleration, tireTransform.position);
+        rigidBody.AddForceAtPosition(steeringDir * wheelMass * desiredAcceleration, tireTransform.position);
     }
 
     private void ApplyAccelerationForce(Transform tireTransform, Transform carTransform, float accelerationInput, float carTopSpeed, AnimationCurve powerCurve)
@@ -86,8 +114,10 @@ public class CarController1 : MonoBehaviour
         }
     }
 
-    private void TurnFrontWheels(float turnMagnitude)
+    private void ApplySteeringAngle(float steerInput, float maxSteeringAngle, Transform wheelTransform)
     {
-
+        float steerAngle = maxSteeringAngle * steerInput;
+        wheelTransform.localRotation = Quaternion.Euler(0, steerAngle, 0);
     }
+
 }

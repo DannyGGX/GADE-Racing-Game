@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerInput : InputController
 {
-    private void Update()
+    public float GetAccelerationInput()
     {
-        turnInput = Input.GetAxis("Horizontal");
-        if (Input.GetButtonDown("Fire1"))
-        {
-            this.Log(turnInput);
-        }
+        return Input.GetAxis("Vertical");
+    }
+    public float GetSteeringInput()
+    {
+        return Input.GetAxis("Horizontal");
     }
 
 }
