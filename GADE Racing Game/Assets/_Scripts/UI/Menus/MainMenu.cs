@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -37,7 +38,18 @@ public class MainMenu : MonoBehaviour
 
     public void StartCheckpointRace()
     {
-        SceneManagerScript.Instance.LoadScene(Scenes.Checkpoint_Intro);
+        //SceneManagerScript.Instance.LoadScene(Scenes.Checkpoint_Intro);
+        SceneManager.LoadScene(1);
+    }
+
+    public void StartBeginnerDialogue()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+    public void StartAdvancedDialogue()
+    {
+        SceneManager.LoadScene(4);
     }
 
     public void QuitGame()
