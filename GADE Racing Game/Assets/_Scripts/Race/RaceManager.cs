@@ -22,7 +22,7 @@ public class RaceManager : MonoBehaviour
     [HideInInspector] public float currentTime;
     private bool isRaceActive = false;
     [Space]
-    [SerializeField] private CarController1[] racers; // to enable and disable inputs on all racers
+    [SerializeField] private CarController2[] racers; // to enable and disable inputs on all racers
     private InputController[] racerInputs;
     [Space]
     [Header("Event Senders")]
