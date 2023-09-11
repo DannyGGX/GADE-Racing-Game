@@ -20,14 +20,15 @@ public class RaceManager : MonoBehaviour
     [SerializeField] private TimerUI timerUI;
 
     [HideInInspector] public float currentTime;
-    private bool isRaceEnded = false;
+    private bool isRaceActive = false;
     [Space]
     [SerializeField] private CarController1[] racers; // to enable and disable inputs on all racers
+    private InputController[] racerInputs;
     [Space]
     [Header("Event Senders")]
     [SerializeField] private EventSenderSO onRaceReadyUp;
-    [SerializeField] private EventSenderSO onTimeUp;
-    [SerializeField] private EventSenderSO onEndRace;
+    [SerializeField] private EventSenderSO onRaceFinished;
+    [SerializeField] private EventSenderSO onRaceLose;
 
     private void Awake()
     {
@@ -36,13 +37,14 @@ public class RaceManager : MonoBehaviour
         else
             Destroy(this);
 
+        CacheRacerInputs();
         DisableRacerInputs();
         Invoke(nameof(RaceReadyUp), 0.5f);
     }
 
     private void FixedUpdate()
     {
-        if(isRaceEnded == false)
+        if(isRaceActive)
         {
             HandleCountDownTimer();
         }
@@ -55,10 +57,31 @@ public class RaceManager : MonoBehaviour
             racer.InputController = new NoInput();
         }
     }
+    private void EnableRacerInputs()
+    {
+        for(int i = 0; i < racers.Length; i++)
+        {
+            racers[i].InputController = racerInputs[i];
+        }
+    }
+    private void CacheRacerInputs()
+    {
+        racerInputs = new InputController[racers.Length];
+        for(int i = 0; i < racers.Length; i++)
+        {
+            racerInputs[i] = racers[i].InputController;
+        }
+    }
 
     private void RaceReadyUp()
     {
         onRaceReadyUp.Invoke();
+    }
+
+    public void StartRace() // called when race ready up is finished
+    {
+        isRaceActive = true;
+        EnableRacerInputs();
     }
 
     public void HandleLapEnd()
@@ -66,14 +89,21 @@ public class RaceManager : MonoBehaviour
         currentLap++;
         if (currentLap > TotalLaps)
         {
-            EndRace();
+            FinishRace();
         }
     }
 
-    private void EndRace()
+    private void FinishRace()
     {
-        onEndRace?.Invoke();
-        isRaceEnded = true;
+        onRaceFinished.Invoke();
+        isRaceActive = false;
+        DisableRacerInputs();
+    }
+
+    private void LoseRace()
+    {
+        onRaceLose.Invoke();
+        isRaceActive = false;
         DisableRacerInputs();
     }
 
@@ -90,8 +120,10 @@ public class RaceManager : MonoBehaviour
         if (currentTime <= 0)
         {
             currentTime = 0;
-            onTimeUp.Invoke();
+            LoseRace();
+            isRaceActive = false;
         }
         timerUI.UpdateTimerUI(currentTime);
     }
+
 }
