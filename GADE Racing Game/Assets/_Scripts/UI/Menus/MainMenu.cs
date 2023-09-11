@@ -6,26 +6,26 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject MainScreen;
-    [SerializeField] private GameObject OptionsScreen;
-    [SerializeField] private GameObject CreditsScreen;
+    //[SerializeField] private GameObject OptionsScreen;
+    //[SerializeField] private GameObject CreditsScreen;
     [SerializeField] private GameObject RacingGameModesScreen;
 
     public void BackButtonClicked()
     {
-        CreditsScreen.SetActive(false);
-        OptionsScreen.SetActive(false);
+        //CreditsScreen.SetActive(false);
+        //OptionsScreen.SetActive(false);
         MainScreen.SetActive(true);
         RacingGameModesScreen.SetActive(false);
     }
 
     public void GoToCredits()
     {
-        CreditsScreen.SetActive(true);
+        //CreditsScreen.SetActive(true);
         MainScreen.SetActive(false);
     }
     public void GoToOptions()
     {
-        OptionsScreen.SetActive(true);
+        //OptionsScreen.SetActive(true);
         MainScreen.SetActive(false);
     }
 
