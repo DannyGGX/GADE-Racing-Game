@@ -16,5 +16,5 @@ MonoBehaviour:
   SpringStrength: 100
   SpringDamper: 15
   SpringRestDistance: 0.5
-  WheelMass: 100
-  TireGripStrength: 20
+  WheelMass: 0.5
+  TireGripStrength: 134.7

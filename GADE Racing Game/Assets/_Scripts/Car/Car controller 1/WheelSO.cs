@@ -13,5 +13,5 @@ public class WheelSO : ScriptableObject
     public float SpringRestDistance;
     [Space]
     public float WheelMass;
-    [Range(0, 100)] public float TireGripStrength;
+    public float TireGripStrength;
 }

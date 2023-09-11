@@ -16,6 +16,6 @@ MonoBehaviour:
   SpringStrength: 100
   SpringDamper: 15
   SpringRestDistance: 0.5
-  WheelMass: 100
-  TireGripStrength: 20
-  MaxSteeringAngle: 40
+  WheelMass: 0.5
+  TireGripStrength: 146.5
+  MaxSteeringAngle: 45

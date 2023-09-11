@@ -106,7 +106,7 @@ public class CarController1 : MonoBehaviour
 
         float steeringVel = Vector3.Dot(steeringDir, wheelWorldVelocity);
         float desiredVelChange = -steeringVel * tireGrip;
-        float desiredAcceleration = desiredVelChange / Time.fixedDeltaTime;
+        float desiredAcceleration = desiredVelChange * Time.deltaTime;
         rigidBody.AddForceAtPosition(steeringDir * wheelMass * desiredAcceleration, tireTransform.position);
     }
 

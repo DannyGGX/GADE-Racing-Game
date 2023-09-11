@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f1f62ab1915d643a02521b9b7cb65c, type: 3}
   m_Name: TestCar
   m_EditorClassIdentifier: 
-  TopSpeed: 50
+  TopSpeed: 500
   PowerCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.01875
-      value: 0.54375
+      time: -0.15189095
+      value: 1.4561523
       inSlope: 2
       outSlope: 2
       tangentMode: 0
@@ -26,13 +26,13 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.99375004
-      value: 0.35
-      inSlope: -2.2631571
-      outSlope: -2.2631571
+      time: 1.4838319
+      value: 1.0949646
+      inSlope: -0.2966499
+      outSlope: -0.2966499
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.11728398
+      inWeight: 0.20423056
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
