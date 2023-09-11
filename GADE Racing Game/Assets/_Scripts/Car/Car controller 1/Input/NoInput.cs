@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class InputController
+public class NoInput : InputController
 {
-    public virtual float GetAccelerationInput()
+    public override float GetAccelerationInput()
     {
         return 0;
     }
-    public virtual float GetSteeringInput()
+    public override float GetSteeringInput()
     {
         return 0;
     }

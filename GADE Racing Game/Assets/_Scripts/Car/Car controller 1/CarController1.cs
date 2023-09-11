@@ -6,18 +6,15 @@ public class CarController1 : MonoBehaviour
 {
     [SerializeField] private Rigidbody rigidBody;
     [SerializeField] private LayerMask ground; // for wheel collisions
-    [SerializeField] private CarSO car;
-    //[SerializeField] private InputController inputController;
-    [Space]
-    [SerializeField] private Transform[] frontWheels = new Transform[2];
-    [SerializeField] private Transform[] backWheels = new Transform[2];
+    [SerializeField] private Car car;
+    [HideInInspector] public InputController InputController; // public so that it can be accessed by RaceManager to disable inputs
 
     private float accelerationInput;
     private float steeringInput;
 
-    private void Awake()
+    private void OnEnable()
     {
-        
+        InputController = new PlayerInput();
     }
 
     private void Update()
@@ -29,22 +26,22 @@ public class CarController1 : MonoBehaviour
     {
         foreach (var frontWheel in car.FrontWheels)
         {
-            frontWheel.IsWheelGrounded = CheckWheelToGroundCollision(frontWheel.WheelTransform, frontWheel.Radius, out frontWheel.hitInfo);
+            frontWheel.IsWheelGrounded = RaycastGroundDetection(frontWheel.WheelTransform, frontWheel.Stats.Radius, out frontWheel.hitInfo);
         }
         foreach(var backWheel in car.BackWheels)
         {
-            backWheel.IsWheelGrounded = CheckWheelToGroundCollision(backWheel.WheelTransform, backWheel.Radius, out backWheel.hitInfo);
+            backWheel.IsWheelGrounded = RaycastGroundDetection(backWheel.WheelTransform, backWheel.Stats.Radius, out backWheel.hitInfo);
         }
 
         foreach(var frontWheel in car.FrontWheels)
         {
+            ApplySteeringAngle(steeringInput, frontWheel.Stats.MaxSteeringAngle, frontWheel.WheelTransform);
             if (frontWheel.IsWheelGrounded)
             {
                 //Calculate Physics
-                ApplySuspensionForce(frontWheel.WheelTransform, frontWheel.SpringStrength, frontWheel.SpringDamper, frontWheel.SpringRestDistance, frontWheel.hitInfo);
-                ApplySteeringAngle(steeringInput, frontWheel.MaxSteeringAngle, frontWheel.WheelTransform);
-                ApplySteeringForce(frontWheel.WheelTransform, frontWheel.TireGripStrength, frontWheel.WheelMass);
-                ApplyAccelerationForce(frontWheel.WheelTransform, transform, accelerationInput, car.TopSpeed, car.PowerCurve);
+                ApplySuspensionForce(frontWheel.WheelTransform, frontWheel.Stats.SpringStrength, frontWheel.Stats.SpringDamper, frontWheel.Stats.SpringRestDistance, frontWheel.hitInfo);
+                ApplySteeringForce(frontWheel.WheelTransform, frontWheel.Stats.TireGripStrength, frontWheel.Stats.WheelMass);
+                ApplyAccelerationForce(frontWheel.WheelTransform, transform, accelerationInput, car.CarStats.TopSpeed, car.CarStats.PowerCurve);
             }
         }
         foreach (var backWheel in car.BackWheels)
@@ -52,21 +49,35 @@ public class CarController1 : MonoBehaviour
             if (backWheel.IsWheelGrounded)
             {
                 //Calculate Physics
-                ApplySuspensionForce(backWheel.WheelTransform, backWheel.SpringStrength, backWheel.SpringDamper, backWheel.SpringRestDistance, backWheel.hitInfo);
+                ApplySuspensionForce(backWheel.WheelTransform, backWheel.Stats.SpringStrength, backWheel.Stats.SpringDamper, backWheel.Stats.SpringRestDistance, backWheel.hitInfo);
             }
         }
     }
 
     private void DetectInputs()
     {
-        accelerationInput = Input.GetAxis("Vertical");
-        steeringInput = Input.GetAxis("Horizontal");
+        accelerationInput = InputController.GetAccelerationInput();
+        steeringInput = InputController.GetSteeringInput();
     }
 
     private bool CheckWheelToGroundCollision(Transform wheelTransform, float wheelRadius, out RaycastHit hitInfo)
     {
         if (Physics.SphereCast(wheelTransform.position, wheelRadius, Vector3.down, out hitInfo, wheelRadius, ground))
         {
+            this.Log("Wheel touching ground");
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private bool RaycastGroundDetection(Transform wheelTransform, float wheelRadius, out RaycastHit hitInfo)
+    {
+        if (Physics.Raycast(wheelTransform.position, Vector3.down, out hitInfo, wheelRadius, ground))
+        {
+            this.Log("Wheel touching ground");
             return true;
         }
         else

@@ -12,34 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f1f62ab1915d643a02521b9b7cb65c, type: 3}
   m_Name: TestCar
   m_EditorClassIdentifier: 
-  TopSpeed: 100
+  TopSpeed: 50
   PowerCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.020832062
-      value: 0.5047302
-      inSlope: 1.6979362
-      outSlope: 1.6979362
+      time: -0.01875
+      value: 0.54375
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.061474975
+      outWeight: 0
     - serializedVersion: 3
-      time: 1.0076162
-      value: 0.3229645
-      inSlope: -2.7199898
-      outSlope: -2.7199898
+      time: 0.99375004
+      value: 0.35
+      inSlope: -2.2631571
+      outSlope: -2.2631571
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.060463596
+      inWeight: 0.11728398
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  FrontWheels:
-  - {fileID: 11400000, guid: 4778b40c99a85b145af0e2218575bd6a, type: 2}
-  - {fileID: 11400000, guid: 8d6f5a1651485054db44d88b685f120d, type: 2}
-  BackWheels:
-  - {fileID: 11400000, guid: 3da6e60ebb5b6e743b1be8fe70ff8dcc, type: 2}
-  - {fileID: 11400000, guid: 5309d981bd3786845831809af46f60b2, type: 2}

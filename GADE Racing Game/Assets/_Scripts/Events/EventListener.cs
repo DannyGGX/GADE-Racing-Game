@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameEventListener : MonoBehaviour
+public class EventListener : MonoBehaviour
 {
     [Tooltip("Event to subscribe to.")]
-    public GameEventSO Event;
+    public EventSenderSO EventSender;
 
     [Tooltip("Thing to do when the event is invoked. Call the desired function from this UnityEvent.")]
     public UnityEvent Response; // UnityEvents are like serialized function calls
 
     private void OnEnable()
     {
-        Event.Subscribe(this);
+        EventSender.Subscribe(this);
     }
     private void OnDisable()
     {
-        Event.Unsubscribe(this);
+        EventSender.Unsubscribe(this);
     }
 
     public void OnEventRaised()

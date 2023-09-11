@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class PlayerInput : InputController
 {
-    public float GetAccelerationInput()
+    public override float GetAccelerationInput()
     {
         return Input.GetAxis("Vertical");
     }
-    public float GetSteeringInput()
+    public override float GetSteeringInput()
     {
         return Input.GetAxis("Horizontal");
     }

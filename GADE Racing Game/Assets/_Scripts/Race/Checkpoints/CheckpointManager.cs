@@ -10,6 +10,8 @@ public class CheckpointManager : MonoBehaviour
     [SerializeField] private Checkpoint[] checkpointsArray;
     private Stack<Checkpoint> checkpointsStack;
 
+    [SerializeField] private EventSenderSO onEndRace;
+
 
     private void Start()
     {
@@ -51,6 +53,7 @@ public class CheckpointManager : MonoBehaviour
         else // Race is finished
         {
             this.Log("Finished race");
+            onEndRace.Invoke();
             // Invoke end race UI
         }
     }

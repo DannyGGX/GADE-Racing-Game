@@ -9,14 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cadf13642bc1cf46ba0201e80ce9e0d, type: 3}
-  m_Name: BackLeft
+  m_Script: {fileID: 11500000, guid: 595538828a3145849a98451b8951eee5, type: 3}
+  m_Name: onEndRace
   m_EditorClassIdentifier: 
-  WheelTransform: {fileID: 0}
-  Radius: 5
-  IsWheelGrounded: 0
-  SpringStrength: 100
-  SpringDamper: 15
-  SpringRestDistance: 5
-  WheelMass: 0
-  TireGripStrength: 0

@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
     //[Tooltip("Measured in letter per second")]
     //[SerializeField] private float textTypeSpeed = 20;
     [Space]
-    [SerializeField] private GameEventSO onDialogueFinished;
+    [SerializeField] private EventSenderSO onDialogueFinished;
 
     private Queue<DialogueEntry> dialogueEntries = new Queue<DialogueEntry>();
     private bool currentTextFinishedTyping = true;

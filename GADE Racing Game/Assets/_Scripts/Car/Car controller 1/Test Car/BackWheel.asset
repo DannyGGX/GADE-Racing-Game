@@ -9,15 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b6703572acd9954094fdb9c440551f5, type: 3}
-  m_Name: FrontLeft
+  m_Script: {fileID: 11500000, guid: 4cadf13642bc1cf46ba0201e80ce9e0d, type: 3}
+  m_Name: BackWheel
   m_EditorClassIdentifier: 
-  WheelTransform: {fileID: 0}
-  Radius: 5
-  IsWheelGrounded: 0
+  Radius: 0.5
   SpringStrength: 100
   SpringDamper: 15
-  SpringRestDistance: 5
-  WheelMass: 0
-  TireGripStrength: 0
-  MaxSteeringAngle: 40
+  SpringRestDistance: 0.5
+  WheelMass: 100
+  TireGripStrength: 20

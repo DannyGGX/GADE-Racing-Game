@@ -270,7 +270,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
@@ -377,7 +377,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
@@ -484,7 +484,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 1010205116}
   m_Layer: 0
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -726,13 +726,22 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
-  car: {fileID: 11400000, guid: 7494be3b5bbd49947aa35c5322deefad, type: 2}
-  frontWheels:
-  - {fileID: 0}
-  - {fileID: 0}
-  backWheels:
-  - {fileID: 0}
-  - {fileID: 0}
+  car:
+    CarStats: {fileID: 11400000, guid: 7494be3b5bbd49947aa35c5322deefad, type: 2}
+    FrontWheels:
+    - WheelTransform: {fileID: 276176549}
+      Stats: {fileID: 11400000, guid: 4778b40c99a85b145af0e2218575bd6a, type: 2}
+      IsWheelGrounded: 0
+    - WheelTransform: {fileID: 884478435}
+      Stats: {fileID: 11400000, guid: 4778b40c99a85b145af0e2218575bd6a, type: 2}
+      IsWheelGrounded: 0
+    BackWheels:
+    - WheelTransform: {fileID: 1684319627}
+      Stats: {fileID: 11400000, guid: 5309d981bd3786845831809af46f60b2, type: 2}
+      IsWheelGrounded: 0
+    - WheelTransform: {fileID: 235916874}
+      Stats: {fileID: 11400000, guid: 5309d981bd3786845831809af46f60b2, type: 2}
+      IsWheelGrounded: 0
 --- !u!1 &1499910315
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +885,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2

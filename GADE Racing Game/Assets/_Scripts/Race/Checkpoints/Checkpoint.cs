@@ -12,7 +12,7 @@ public class Checkpoint : MonoBehaviour
     private string passedTag = "PassedCheckpoint";
     private MeshRenderer mesh;
     [Space]
-    [SerializeField] private GameEventSO onTargetCheckpointPassed;
+    [SerializeField] private EventSenderSO onTargetCheckpointPassed;
 
     private void Awake()
     {
