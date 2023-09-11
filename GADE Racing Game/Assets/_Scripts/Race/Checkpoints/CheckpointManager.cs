@@ -10,7 +10,7 @@ public class CheckpointManager : MonoBehaviour
     [SerializeField] private Checkpoint[] checkpointsArray;
     private Stack<Checkpoint> checkpointsStack;
 
-    [SerializeField] private EventSenderSO onEndRace;
+    [SerializeField] private EventSenderSO onEndLap;
 
 
     private void Start()
@@ -45,16 +45,9 @@ public class CheckpointManager : MonoBehaviour
             checkpointsStack.Peek().SetAsTarget();
             this.Log("Set next checkpoint");
         }
-        else if (currentLap < totalLaps)
+        else
         {
-            currentLap++;
-            StartLap();
-        }
-        else // Race is finished
-        {
-            this.Log("Finished race");
-            onEndRace.Invoke();
-            // Invoke end race UI
+            onEndLap.Invoke(); // To RaceManager
         }
     }
 }
