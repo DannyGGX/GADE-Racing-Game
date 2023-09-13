@@ -666,7 +666,7 @@ MonoBehaviour:
   currentSpeakerName: {fileID: 1955353308}
   currentSpeakerText: {fileID: 632504211}
   conversationSO: {fileID: 11400000, guid: 4b4d0f2bfe15abc48921259159430c57, type: 2}
-  onDialogueFinished: {fileID: 11400000, guid: b7eee81299c5afd40aa27eaf41e7dd82, type: 2}
+  nextScene: 4
 --- !u!1 &1546114710
 GameObject:
   m_ObjectHideFlags: 0

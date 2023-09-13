@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccf0027962b9d46409cbf78cc0b049e6, type: 3}
-  m_Name: CheckpointRace
+  m_Name: CheckpointDialogue
   m_EditorClassIdentifier: 
   Conversation:
   - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}

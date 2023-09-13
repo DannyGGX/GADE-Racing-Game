@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
     //[Tooltip("Measured in letter per second")]
     //[SerializeField] private float textTypeSpeed = 20;
     [Space]
-    [SerializeField] private EventSenderSO onDialogueFinished;
+    [SerializeField, Tooltip("The next scene to go to when dialogue is finished")] private Scenes nextScene;
 
     private Queue<DialogueEntry> dialogueEntries = new Queue<DialogueEntry>();
     private bool currentTextFinishedTyping = true;
@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                onDialogueFinished.Invoke(); // To GameManager to change scene
+                GoToNextScene();
                 this.Log("Dialogue finished".Color("green"));
             }
         }
@@ -89,5 +89,10 @@ public class DialogueManager : MonoBehaviour
     private float ToSecondWaitTime(float letterPerSecondTime)
     {
         return 1 / letterPerSecondTime;
+    }
+
+    private void GoToNextScene()
+    {
+        SceneManagerScript.Instance.LoadScene(nextScene);
     }
 }
