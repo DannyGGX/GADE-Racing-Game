@@ -12,7 +12,9 @@ public class EndRaceUI : MonoBehaviour
 
     private void Awake()
     {
-        
+        raceFinishedMessage.gameObject.SetActive(false);
+        raceLoseMessage.gameObject.SetActive(false);
+        mainMenuButton.gameObject.SetActive(false);
     }
 
     public void RaceFinished()

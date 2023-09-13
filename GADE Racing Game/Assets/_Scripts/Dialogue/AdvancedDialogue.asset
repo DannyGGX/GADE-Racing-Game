@@ -12,4 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf0027962b9d46409cbf78cc0b049e6, type: 3}
   m_Name: AdvancedDialogue
   m_EditorClassIdentifier: 
-  Conversation: []
+  Conversation:
+  - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
+    Text: Advanced race... What's so advanced about it?
+    TextTypeSpeed: 20
+  - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
+    Text: There's supposed to be other racers
+    TextTypeSpeed: 20
+  - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
+    Text: You mean this game has multiplayer!?
+    TextTypeSpeed: 30
+  - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
+    Text: No no... your racing against bots
+    TextTypeSpeed: 30
+  - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
+    Text: Oh...
+    TextTypeSpeed: 10
+  - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
+    Text: And you call that advanced
+    TextTypeSpeed: 20
+  - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
+    Text: I don't get to make the rules here! Just play the game
+    TextTypeSpeed: 20

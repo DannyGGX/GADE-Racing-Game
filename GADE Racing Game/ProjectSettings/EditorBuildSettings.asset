@@ -13,7 +13,7 @@ EditorBuildSettings:
     guid: 513a53b827feb4f47b7a6fc94ada37e9
   - enabled: 1
     path: Assets/Scenes/Checkpoint_Race.unity
-    guid: 087fb4d59cfc81d4d89488fcd6684b89
+    guid: e8b08e63fcd4d994786d787eb4d62b80
   - enabled: 1
     path: Assets/Scenes/BeginnerRaceDialogue.unity
     guid: bda6fb6822c92e94097fcec4aff10201

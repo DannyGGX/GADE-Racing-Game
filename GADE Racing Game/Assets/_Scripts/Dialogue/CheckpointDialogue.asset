@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: CheckpointDialogue
   m_EditorClassIdentifier: 
   Conversation:
-  - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
-    Text: Hi there player
-    TextTypeSpeed: 20
   - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
-    Text: Hi
+    Text: Checkpoints... is this race timed?
     TextTypeSpeed: 20
   - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
-    Text: 
-    TextTypeSpeed: 0
+    Text: Yip. Goodluck
+    TextTypeSpeed: 20

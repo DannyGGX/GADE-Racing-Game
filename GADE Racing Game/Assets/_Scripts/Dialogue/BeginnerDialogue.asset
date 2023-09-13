@@ -12,4 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf0027962b9d46409cbf78cc0b049e6, type: 3}
   m_Name: BeginnerDialogue
   m_EditorClassIdentifier: 
-  Conversation: []
+  Conversation:
+  - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
+    Text: Welcome to the beginner race!
+    TextTypeSpeed: 20
+  - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
+    Text: Are you going to baby me through this?
+    TextTypeSpeed: 20
+  - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
+    Text: Umm... alright then
+    TextTypeSpeed: 12
+  - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
+    Text: Skip the foreplay - what's the buttons?
+    TextTypeSpeed: 20
+  - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
+    Text: WASD for movement, Space to brake and Esc to pause.
+    TextTypeSpeed: 20
+  - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
+    Text: Awesome, cheers!
+    TextTypeSpeed: 20

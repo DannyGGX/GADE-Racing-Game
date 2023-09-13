@@ -21,6 +21,11 @@ public class TimerUI : MonoBehaviour
         addTimeStartPosition = addTimeText.transform.position;
     }
 
+    public void ShowTimer()
+    {
+        timerText.gameObject.SetActive(true);
+    }
+
 
     private int minutes;
     private int seconds;

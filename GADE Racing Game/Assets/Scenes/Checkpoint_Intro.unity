@@ -510,8 +510,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 930034540}
   - {fileID: 2054196903}
+  - {fileID: 930034540}
   m_Father: {fileID: 1707718981}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -706,6 +706,14 @@ PrefabInstance:
     - target: {fileID: 5695618147922176715, guid: d7fa00984b51bcd4b908f52f1b0734ca, type: 3}
       propertyPath: m_Name
       value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695618147922176715, guid: d7fa00984b51bcd4b908f52f1b0734ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209448364453994847, guid: d7fa00984b51bcd4b908f52f1b0734ca, type: 3}
+      propertyPath: nextScene
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

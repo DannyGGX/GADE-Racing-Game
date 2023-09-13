@@ -364,6 +364,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 6209448364453994847, guid: d7fa00984b51bcd4b908f52f1b0734ca, type: 3}
+      propertyPath: conversationSO
+      value: 
+      objectReference: {fileID: 11400000, guid: cc60aef7a206b4648848af25442e5a5a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -567,8 +571,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1951411259}
   - {fileID: 965839813}
+  - {fileID: 1951411259}
   m_Father: {fileID: 1707718981}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
