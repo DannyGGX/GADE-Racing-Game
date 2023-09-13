@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class CheckpointManager : MonoBehaviour
 {
-    [SerializeField, Range(1, 3)] private int totalLaps = 1;
-    private int currentLap = 1;
-    [Space]
     [SerializeField] private Checkpoint[] checkpointsArray;
     private Stack<Checkpoint> checkpointsStack;
 

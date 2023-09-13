@@ -31,8 +31,7 @@ Transform:
   m_LocalPosition: {x: -584.68176, y: -145.5987, z: -81.8691}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2848367383582973765}
+  m_Children: []
   m_Father: {fileID: 4178718917521407413}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!218 &8305158241851514670
@@ -26442,13 +26441,13 @@ Transform:
   m_GameObject: {fileID: 7084125765616929526}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -584.68176, y: -145.5987, z: -81.8691}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1321606783745947714}
   - {fileID: 7309879753340645029}
-  m_Father: {fileID: 4507982637248261346}
+  m_Father: {fileID: 4178718917521407413}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6079922728517108802
 MonoBehaviour:
@@ -26877,7 +26876,7 @@ MonoBehaviour:
   - Ground
   terrainObjects:
   - {fileID: 0}
-  - {fileID: 8305158241851514670}
+  - {fileID: 0}
   terrainSplatTextures: []
   activeTerrain: {fileID: 0}
   activeTerrainY: 0
@@ -27280,5 +27279,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4507982637248261346}
+  - {fileID: 2848367383582973765}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

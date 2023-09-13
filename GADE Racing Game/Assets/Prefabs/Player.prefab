@@ -279,8 +279,8 @@ MonoBehaviour:
   backLeftWheel: {fileID: 8807302238575295401}
   backRightWheel: {fileID: 2738366634058814809}
   maxAcceleration: 500
-  maxBrakeForce: 300
-  maxTurnAngle: 15
+  maxBrakeForce: 350
+  maxTurnAngle: 20
 --- !u!1 &5945519235430521515 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3093283762188555399, guid: f6fb00ee7273e64449f4c933cbbb3572, type: 3}

@@ -9,8 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21a54d4df9705fe4faa843db6d48c954, type: 3}
-  m_Name: Checkpoint_Intro
+  m_Script: {fileID: 11500000, guid: 9ff6ec0ae28c494499cf16e8cee92915, type: 3}
+  m_Name: Scenes
   m_EditorClassIdentifier: 
-  sceneName: 1
-  buildIndex: 1
+  ScenesArray:
+  - SceneName: 0
+    BuildIndex: 0
+  - SceneName: 3
+    BuildIndex: 1
+  - SceneName: 4
+    BuildIndex: 2
+  - SceneName: 1
+    BuildIndex: 3
+  - SceneName: 5
+    BuildIndex: 4

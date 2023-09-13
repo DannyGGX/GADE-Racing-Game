@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -36,20 +35,19 @@ public class MainMenu : MonoBehaviour
         RacingGameModesScreen.SetActive(true);
     }
 
-    public void StartCheckpointRace()
+    public void StartCheckpointDialogue()
     {
-        //SceneManagerScript.Instance.LoadScene(Scenes.Checkpoint_Intro);
-        SceneManager.LoadScene(1);
+        SceneManagerScript.Instance.LoadScene(Scenes.Checkpoint_Dialogue);
     }
 
     public void StartBeginnerDialogue()
     {
-        SceneManager.LoadScene(3);
+        SceneManagerScript.Instance.LoadScene(Scenes.Beginner_Dialogue);
     }
 
     public void StartAdvancedDialogue()
     {
-        SceneManager.LoadScene(4);
+        SceneManagerScript.Instance.LoadScene(Scenes.Advanced_Dialogue);
     }
 
     public void QuitGame()

@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using Array = System.Array;
 
 public class SceneManagerScript : MonoBehaviour
 {
     public static SceneManagerScript Instance { get; private set; }
 
-    [SerializeField] private SceneSO[] scenesArray;
+    [SerializeField] private ScenesSO scenes;
 
     private void Awake()
     {
@@ -20,10 +19,10 @@ public class SceneManagerScript : MonoBehaviour
 
     public void LoadScene(Scenes sceneName)
     {
-        SceneSO targetScene;
+        Scene targetScene;
         try
         {
-            targetScene = Array.Find(scenesArray, x => x.sceneName == sceneName);
+            targetScene = Array.Find(scenes.ScenesArray, x => x.SceneName == sceneName);
         }
         catch
         {
@@ -31,7 +30,7 @@ public class SceneManagerScript : MonoBehaviour
             return;
         }
 
-        SceneManager.LoadScene(targetScene.buildIndex);
+        SceneManager.LoadScene(targetScene.BuildIndex);
     }
 
 }
