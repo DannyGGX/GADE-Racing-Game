@@ -532,6 +532,11 @@ Texture2D:
     offset: 0
     size: 0
     path: 
+--- !u!4 &233944723 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1455955740640307106, guid: 2254f1cb30c111e4693480e1ecce5fd0, type: 3}
+  m_PrefabInstance: {fileID: 992503812}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &246641948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1046,6 +1051,11 @@ MonoBehaviour:
   perpDirRotated: {x: 1, y: 0, z: -0.0002237986}
   markerStartUVY: 0.08276367
   customPoints: []
+--- !u!4 &355325737 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2197991008649638443, guid: 2254f1cb30c111e4693480e1ecce5fd0, type: 3}
+  m_PrefabInstance: {fileID: 992503812}
+  m_PrefabAsset: {fileID: 0}
 --- !u!28 &357111273
 Texture2D:
   m_ObjectHideFlags: 0
@@ -2800,6 +2810,22 @@ PrefabInstance:
       propertyPath: maxBrakeForce
       value: 350
       objectReference: {fileID: 0}
+    - target: {fileID: 376453526006178191, guid: 2254f1cb30c111e4693480e1ecce5fd0, type: 3}
+      propertyPath: backLeftTransform
+      value: 
+      objectReference: {fileID: 233944723}
+    - target: {fileID: 376453526006178191, guid: 2254f1cb30c111e4693480e1ecce5fd0, type: 3}
+      propertyPath: backRightTransform
+      value: 
+      objectReference: {fileID: 1690167042}
+    - target: {fileID: 376453526006178191, guid: 2254f1cb30c111e4693480e1ecce5fd0, type: 3}
+      propertyPath: frontLeftTransform
+      value: 
+      objectReference: {fileID: 355325737}
+    - target: {fileID: 376453526006178191, guid: 2254f1cb30c111e4693480e1ecce5fd0, type: 3}
+      propertyPath: frontRightTransform
+      value: 
+      objectReference: {fileID: 1453500598}
     - target: {fileID: 1743752010894486334, guid: 2254f1cb30c111e4693480e1ecce5fd0, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3591,6 +3617,11 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!4 &1453500598 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5451482122663564433, guid: 2254f1cb30c111e4693480e1ecce5fd0, type: 3}
+  m_PrefabInstance: {fileID: 992503812}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1487212107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4164,6 +4195,11 @@ MonoBehaviour:
   perpDirRotated: {x: 0.99720335, y: 0, z: -0.074736215}
   markerStartUVY: 0.26919556
   customPoints: []
+--- !u!4 &1690167042 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1186555447385426793, guid: 2254f1cb30c111e4693480e1ecce5fd0, type: 3}
+  m_PrefabInstance: {fileID: 992503812}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1745758111
 MonoBehaviour:
   m_ObjectHideFlags: 0

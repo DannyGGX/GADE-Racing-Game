@@ -10,6 +10,11 @@ public class CarController2 : MonoBehaviour
     [SerializeField] WheelCollider frontRightWheel;
     [SerializeField] WheelCollider backLeftWheel;
     [SerializeField] WheelCollider backRightWheel;
+    [Space] 
+    [SerializeField] private Transform frontLeftTransform;
+    [SerializeField] private Transform frontRightTransform;
+    [SerializeField] private Transform backLeftTransform;
+    [SerializeField] private Transform backRightTransform;
     [Space]
     [SerializeField] private float maxAcceleration = 500;
     [SerializeField] private float maxBrakeForce = 300;
@@ -19,7 +24,7 @@ public class CarController2 : MonoBehaviour
     private float currentBrakeForce;
     private float currentTurnAngle;
 
-    private void OnEnable()
+    private void OnEnable() // Called before Awake in RaceManager
     {
         InputController = new PlayerInput();
     }
@@ -46,8 +51,22 @@ public class CarController2 : MonoBehaviour
         backLeftWheel.brakeTorque = currentBrakeForce;
         backRightWheel.brakeTorque = currentBrakeForce;
 
+        ApplySteering();
+    }
+
+    private void ApplySteering()
+    {
         currentTurnAngle = maxTurnAngle * InputController.GetSteeringInput();
         frontLeftWheel.steerAngle = currentTurnAngle;
         frontRightWheel.steerAngle = currentTurnAngle;
+        
+        ApplySteeringAngle(InputController.GetSteeringInput(), maxTurnAngle, frontLeftTransform);
+        ApplySteeringAngle(InputController.GetSteeringInput(), maxTurnAngle, frontRightTransform);
+    }
+    
+    private void ApplySteeringAngle(float steerInput, float maxSteeringAngle, Transform wheelTransform)
+    {
+        float steerAngle = maxSteeringAngle * steerInput;
+        wheelTransform.localRotation = Quaternion.Euler(0, steerAngle, 90);
     }
 }
