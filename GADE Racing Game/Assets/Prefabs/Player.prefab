@@ -120,6 +120,21 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 7787366407848953686}
   m_SourcePrefab: {fileID: 100100000, guid: f6fb00ee7273e64449f4c933cbbb3572, type: 3}
+--- !u!4 &1186555447385426793 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7500827555249489221, guid: f6fb00ee7273e64449f4c933cbbb3572, type: 3}
+  m_PrefabInstance: {fileID: 8678215545263033900}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1455955740640307106 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7808026823880829326, guid: f6fb00ee7273e64449f4c933cbbb3572, type: 3}
+  m_PrefabInstance: {fileID: 8678215545263033900}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2197991008649638443 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7417395748599069703, guid: f6fb00ee7273e64449f4c933cbbb3572, type: 3}
+  m_PrefabInstance: {fileID: 8678215545263033900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3561854194841227307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5260495236640153095, guid: f6fb00ee7273e64449f4c933cbbb3572, type: 3}
@@ -278,9 +293,18 @@ MonoBehaviour:
   frontRightWheel: {fileID: 7787366407848953686}
   backLeftWheel: {fileID: 8807302238575295401}
   backRightWheel: {fileID: 2738366634058814809}
+  frontLeftTransform: {fileID: 2197991008649638443}
+  frontRightTransform: {fileID: 5451482122663564433}
+  backLeftTransform: {fileID: 1455955740640307106}
+  backRightTransform: {fileID: 1186555447385426793}
   maxAcceleration: 500
   maxBrakeForce: 350
   maxTurnAngle: 20
+--- !u!4 &5451482122663564433 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3731435788293642941, guid: f6fb00ee7273e64449f4c933cbbb3572, type: 3}
+  m_PrefabInstance: {fileID: 8678215545263033900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5945519235430521515 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3093283762188555399, guid: f6fb00ee7273e64449f4c933cbbb3572, type: 3}
