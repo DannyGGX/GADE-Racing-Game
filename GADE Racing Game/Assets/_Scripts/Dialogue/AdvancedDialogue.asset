@@ -34,3 +34,6 @@ MonoBehaviour:
   - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
     Text: I don't get to make the rules here! Just play the game
     TextTypeSpeed: 20
+  - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
+    Text: I don't get to make the rules here! Just play the game
+    TextTypeSpeed: 20
