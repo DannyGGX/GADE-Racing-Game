@@ -64,7 +64,6 @@ public class CarController1 : MonoBehaviour
     {
         if (Physics.SphereCast(wheelTransform.position, wheelRadius, Vector3.down, out hitInfo, wheelRadius, ground))
         {
-            this.Log("Wheel touching ground");
             return true;
         }
         else
@@ -77,7 +76,6 @@ public class CarController1 : MonoBehaviour
     {
         if (Physics.Raycast(wheelTransform.position, Vector3.down, out hitInfo, wheelRadius, ground))
         {
-            this.Log("Wheel touching ground");
             return true;
         }
         else

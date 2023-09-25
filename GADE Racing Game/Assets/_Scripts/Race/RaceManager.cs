@@ -63,8 +63,6 @@ public class RaceManager : MonoBehaviour
         {
             racers[i].InputController = racerInputs[i];
         }
-        this.Log("Inputs enabled", racerInputs[0] is PlayerInput);
-        racers[0].InputController = new PlayerInput();
     }
     private void CacheRacerInputs()
     {

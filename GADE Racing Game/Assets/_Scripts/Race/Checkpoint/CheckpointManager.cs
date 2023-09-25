@@ -19,7 +19,7 @@ public class CheckpointManager : MonoBehaviour
         PopulateStack();
         SetFirstTargetCheckpoint();
     }
-    private void PopulateStack()
+    private void PopulateStack() // Load checkpoints from the array into the stack
     {
         checkpointsStack = new Stack<Checkpoint>();
         for (int i = checkpointsArray.Length - 1; i >= 0; i--) // Add checkpoints backwards into the stack because of first in last out.
@@ -40,7 +40,6 @@ public class CheckpointManager : MonoBehaviour
         {
             checkpointsStack.Pop();
             checkpointsStack.Peek().SetAsTarget();
-            this.Log("Set next checkpoint");
         }
         else
         {

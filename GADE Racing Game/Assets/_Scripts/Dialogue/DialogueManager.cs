@@ -44,7 +44,6 @@ public class DialogueManager : MonoBehaviour
             else
             {
                 GoToNextScene();
-                this.Log("Dialogue finished".Color("green"));
             }
         }
     }

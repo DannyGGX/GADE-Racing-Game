@@ -30,7 +30,6 @@ public class Checkpoint : MonoBehaviour
         if (currentCheckpointState == CheckpointStates.Target && other.CompareTag("Player"))
         {
             SetAsPassed();
-            this.Log("Player passed checkpoint");
             onTargetCheckpointPassed.Invoke();
         }
     }
