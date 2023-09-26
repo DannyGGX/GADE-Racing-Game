@@ -3,13 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaypointTracker : MonoBehaviour
+public class WaypointTracker
 {
     private Node<Waypoint> currentNode;
 
-    private void Start()
+    public Vector3 GetFirstWaypointPosition()
     {
         currentNode = WaypointManager.Instance.waypointLinkedList.Head;
+        return GetCurrentWaypointPosition();
+    }
+    public Vector3 GetNextWaypointPosition()
+    {
+        SetNextNode();
+        return GetCurrentWaypointPosition();
     }
 
     private void SetNextNode()
@@ -17,14 +23,14 @@ public class WaypointTracker : MonoBehaviour
         currentNode = currentNode.NextNode;
     }
 
-    public Vector3 GetCurrentWaypointPosition()
+    private Vector3 GetCurrentWaypointPosition()
     {
         return currentNode.Data.transform.position;
     }
 
-    public Vector3 GetNextWaypointPosition()
+    public int GetCurrentWaypointId()
     {
-        SetNextNode();
-        return GetCurrentWaypointPosition();
+        return currentNode.Data.WaypointId;
     }
+
 }

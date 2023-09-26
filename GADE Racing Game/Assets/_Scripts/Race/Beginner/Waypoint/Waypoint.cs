@@ -5,12 +5,19 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
-    [field: SerializeField] public int WaypointId { get; private set; }
+    public int WaypointId { get; set; }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("AI_Racer"))
         {
-            
+            other.GetComponent<AI_Racer>().SetNextDestination();
         }
+    }
+
+    public void HideMesh()
+    {
+        GetComponent<MeshRenderer>().enabled = false;
     }
 }

@@ -9,7 +9,8 @@ public class WaypointManager : MonoBehaviour
     public static WaypointManager Instance { get; private set; }
 
     [SerializeField] private Waypoint[] waypointsArray;
-    [field: SerializeField] public CustomLinkedList<Waypoint> waypointLinkedList { get; private set; }
+    [SerializeField] private bool hideWaypointMeshes = true;
+    public CustomLinkedList<Waypoint> waypointLinkedList { get; private set; }
     
     private void Awake()
     {
@@ -18,9 +19,30 @@ public class WaypointManager : MonoBehaviour
         else
             Destroy(this);
         
+        SetWaypointsId();
+        if (hideWaypointMeshes)
+        {
+            HideWaypointMeshes();
+        }
         PopulateLinkedList();
     }
 
+    private void SetWaypointsId()
+    {
+        for (int i = 0; i < waypointsArray.Length; i++)
+        {
+            waypointsArray[i].WaypointId = i;
+        }
+    }
+
+    private void HideWaypointMeshes()
+    {
+        foreach (var waypoint in waypointsArray)
+        {
+            waypoint.HideMesh();
+        }
+    }
+    
     private void PopulateLinkedList()
     {
         waypointLinkedList = new CustomLinkedList<Waypoint>();
