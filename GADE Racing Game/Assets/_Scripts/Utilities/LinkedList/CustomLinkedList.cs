@@ -27,6 +27,8 @@ public class CustomLinkedList<T>
             Last = newNode;
         }
         Length++;
+        
+        Last.NextNode = Head; // Circular
     }
 
     public void AddFirst(T data)
@@ -43,6 +45,8 @@ public class CustomLinkedList<T>
             Head = newNode;
         }
         Length++;
+        
+        Last.NextNode = Head; // Circular
     }
 
     private bool IsLinkedListEmpty() => Head == null;
@@ -55,6 +59,8 @@ public class CustomLinkedList<T>
         }
         Head = Head.NextNode;
         Length--;
+        
+        Last.NextNode = Head; // Circular
     }
 
     public void Remove(Node<T> nodeToRemove)
@@ -69,6 +75,8 @@ public class CustomLinkedList<T>
         }
         //Search for last element;
         Length--;
+
+        Last.NextNode = Head; // Circular
         throw new NotImplementedException();
     }
 
