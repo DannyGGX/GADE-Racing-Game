@@ -30,6 +30,7 @@ public class CustomLinkedList<T>
         
         Last.NextNode = Head; // Circular
     }
+    private bool IsLinkedListEmpty() => Head == null;
 
     public void AddFirst(T data)
     {
@@ -49,7 +50,6 @@ public class CustomLinkedList<T>
         Last.NextNode = Head; // Circular
     }
 
-    private bool IsLinkedListEmpty() => Head == null;
 
     public void RemoveFirst()
     {

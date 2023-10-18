@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EventSenderSO", menuName = "Scriptable Object/Event Sender")]
+[CreateAssetMenu(fileName = "EventSenderSO", menuName = "Scriptable Object/Event Sender/No Parameter")]
 public class EventSenderSO : ScriptableObject
 {
     /// <summary>

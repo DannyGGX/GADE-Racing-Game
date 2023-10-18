@@ -20,11 +20,16 @@ public class WaypointManager : MonoBehaviour
             Destroy(this);
         
         SetWaypointsId();
+        PopulateLinkedList();
+        
+#if UNITY_EDITOR
         if (hideWaypointMeshes)
         {
             HideWaypointMeshes();
         }
-        PopulateLinkedList();
+        return;
+#endif
+        HideWaypointMeshes();
     }
 
     private void SetWaypointsId()
