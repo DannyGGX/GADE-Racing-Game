@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class AIRacerFactory : Factory
+public class AIRacerRacerFactory : RacerFactory
 {
     public AI_StatsSO RacerStats;
     

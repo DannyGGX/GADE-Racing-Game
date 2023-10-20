@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class RacerSpawner : MonoBehaviour
 {
-    [SerializeField] private Factory[] racerFactories;
+    [SerializeField] private RacerFactory[] racerFactories;
     
-    private void OnEnable()
+    private void OnEnable() // Call before other script calls
     {
         SpawnRacers();
     }

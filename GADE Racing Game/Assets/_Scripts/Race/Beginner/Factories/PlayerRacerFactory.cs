@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFactory : Factory
+public class PlayerRacerFactory : RacerFactory
 {
     public override void ApplyStats()
     {
-        
     }
 }

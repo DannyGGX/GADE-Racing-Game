@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public abstract class Factory : MonoBehaviour
+public abstract class RacerFactory : MonoBehaviour
 {
     public Transform SpawnPosition;
     public Racer BaseRacerPrefab;
+    
     public Racer CreateRacer()
     {
         BaseRacerPrefab = Instantiate(BaseRacerPrefab , SpawnPosition.position, SpawnPosition.rotation);
