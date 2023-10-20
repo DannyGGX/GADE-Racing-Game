@@ -80,8 +80,15 @@ public class CustomLinkedList<T>
         throw new NotImplementedException();
     }
 
-    private Node<T> GetPreviousNode(Node<T> targetNode)
+    public void PrintAll(Node<T> head)
     {
-        throw new NotImplementedException();
+        Node<T> currentNode = head;
+        Debug.Log(currentNode.Data);
+
+        while (currentNode.NextNode != Last)
+        {
+            currentNode = currentNode.NextNode;
+            Debug.Log(currentNode.Data);
+        }
     }
 }
