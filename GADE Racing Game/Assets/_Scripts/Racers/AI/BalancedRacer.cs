@@ -7,13 +7,3 @@ public class BalancedRacer : AI_Racer
 {
     
 }
-
-public class SpeedySlowTurnerRacer : AI_Racer
-{
-    
-}
-
-public class FastAcceleratorFastTurner : AI_Racer
-{
-    
-}

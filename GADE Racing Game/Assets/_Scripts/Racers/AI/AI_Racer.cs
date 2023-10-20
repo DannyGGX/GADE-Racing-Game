@@ -39,7 +39,7 @@ public class AI_Racer : Racer
     }
     
 
-    public void RaceStart()
+    public void RaceStart() // Will be called after the ready, set, go
     {
         navMeshAgent.destination = WaypointTracker.GetFirstWaypointPosition();
     }
