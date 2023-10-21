@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Serialization;
 
-public class ReadyUpUI : MonoBehaviour
+public class StartSequenceUI : MonoBehaviour
 {
     [SerializeField] private GameObject[] textSequence = new GameObject[3];
-
-    [SerializeField] private EventSenderSO onReadyUpFinished;
+    [SerializeField] private StartSequence controller;
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class ReadyUpUI : MonoBehaviour
             yield return wait2;
         }
         textSequence[textSequence.Length - 1].SetActive(true);
-        onReadyUpFinished.Invoke();
+        controller.StartRace();
         yield return wait1;
         textSequence[textSequence.Length - 1].SetActive(false);
     }

@@ -6,18 +6,34 @@ using UnityEngine;
 public class RacerSpawner : MonoBehaviour
 {
     [SerializeField] private RacerFactory[] racerFactories;
+
+    private Racer[] racers;
     
-    private void OnEnable() // Call before other script calls
+    private void Awake() // Call before other script calls
     {
-        SpawnRacers();
+        SpawnAndStoreRacers();
+        this.Log("Racers spawned and stored");
+    }
+    private void OnEnable()
+    {
+        SendRacers();
+        this.Log("Sent racer references");
     }
 
-    private void SpawnRacers()
+    private void SpawnAndStoreRacers()
     {
-        foreach (var factory in racerFactories)
+        racers = new Racer[racerFactories.Length];
+
+        for (int i = 0; i < racerFactories.Length; i++)
         {
-            factory.CreateRacer();
-            factory.ApplyStats();
+            racers[i] = racerFactories[i].CreateRacer();
+            racerFactories[i].ApplyStats();
         }
     }
+
+    private void SendRacers()
+    {
+        EventManager.OnSendRacerReferences.Invoke(racers);
+    }
+    
 }

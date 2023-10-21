@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Serialization;
 
+[System.Serializable]
 public class LapCounterUI
 {
     [SerializeField] private TextMeshProUGUI lapText;

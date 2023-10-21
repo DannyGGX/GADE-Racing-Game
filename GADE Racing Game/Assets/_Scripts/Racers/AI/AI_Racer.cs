@@ -18,10 +18,11 @@ public class AI_Racer : Racer
     private void Start()
     {
         ApplyRacerStats();
-        RaceStart();
+        SetFirstDestination();
+        this.Log("AI racer Start() is called");
     }
 
-    private void ApplyRacerStats()
+    public void ApplyRacerStats()
     {
         ApplyCarMovementStats();
         AddRacerColor();
@@ -39,7 +40,7 @@ public class AI_Racer : Racer
     }
     
 
-    public void RaceStart() // Will be called after the ready, set, go
+    public void SetFirstDestination() // Will be called after the ready, set, go
     {
         navMeshAgent.destination = WaypointTracker.GetFirstWaypointPosition();
     }
