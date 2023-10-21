@@ -76,12 +76,12 @@ public class RacerManager : MonoBehaviour
     }
 
 
-    private void FinishRace() // called on last lap when last checkpoint is reached
+    public void FinishRace() // called on last lap when last checkpoint is reached
     {
         DisableRacerInputs();
     }
 
-    private void LoseRace() // called when ran out of time or all other racers passed last waypoint on their last lap
+    public void LoseRace() // called when ran out of time or all other racers passed last waypoint on their last lap
     {
         DisableRacerInputs();
     }

@@ -29,6 +29,7 @@ public class CountDownTimer : MonoBehaviour
     {
         currentTime = TotalRaceTime;
         isRaceActive = true;
+        timerUI.ShowTimer();
     }
     
     private void HandleCountDownTimer()
@@ -54,6 +55,10 @@ public class CountDownTimer : MonoBehaviour
     {
         onRaceLose.Invoke();
         isRaceActive = false;
-        //DisableRacerInputs();
+    }
+
+    public void FreezeTimer() // called when race is completed
+    {
+        isRaceActive = false;
     }
 }
