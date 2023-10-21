@@ -184,10 +184,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2387e0e2609980744a2be1c9abbac75f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalLaps: 1
+  totalLaps: 2
   lapCounterUI:
     lapText: {fileID: 5970180734799584236}
   onRaceFinished: {fileID: 11400000, guid: ed18f4366d31df44391476f23c92a715, type: 2}
+  onNextLap: {fileID: 11400000, guid: 54e3bfe3646f1b64984a94aee657e397, type: 2}
 --- !u!114 &1416357079201545099
 MonoBehaviour:
   m_ObjectHideFlags: 0

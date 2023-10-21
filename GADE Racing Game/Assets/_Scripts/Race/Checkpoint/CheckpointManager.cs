@@ -14,7 +14,7 @@ public class CheckpointManager : MonoBehaviour
     {
         StartLap();
     }
-    private void StartLap()
+    public void StartLap()
     {
         PopulateStack();
         SetFirstTargetCheckpoint();

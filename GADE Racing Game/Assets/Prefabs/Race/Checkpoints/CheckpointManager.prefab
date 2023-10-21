@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1374578366498923674}
   - component: {fileID: 5408883602013811156}
   - component: {fileID: 662518239138133852}
+  - component: {fileID: 2649189296608052958}
   m_Layer: 0
   m_Name: CheckpointManager
   m_TagString: Untagged
@@ -69,6 +70,34 @@ MonoBehaviour:
       - m_Target: {fileID: 5408883602013811156}
         m_TargetAssemblyTypeName: CheckpointManager, Assembly-CSharp
         m_MethodName: CurrentTargetCheckpointPassed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2649189296608052958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017773545797720879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20e479b64b16e44380ace3e44f8b3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventSender: {fileID: 11400000, guid: 54e3bfe3646f1b64984a94aee657e397, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5408883602013811156}
+        m_TargetAssemblyTypeName: CheckpointManager, Assembly-CSharp
+        m_MethodName: StartLap
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

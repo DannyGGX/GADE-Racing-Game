@@ -10,6 +10,7 @@ public class LapManager : MonoBehaviour
     [SerializeField] private LapCounterUI lapCounterUI;
     
     [SerializeField] private EventSenderSO onRaceFinished;
+    [SerializeField] private EventSenderSO onNextLap;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class LapManager : MonoBehaviour
         else
         {
             lapCounterUI?.SetNextLap();
+            onNextLap.Invoke();
         }
     }
 
