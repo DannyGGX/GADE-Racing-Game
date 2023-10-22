@@ -9,7 +9,9 @@ using UnityEngine;
 /// </summary>
 public static class EventManager
 {
-    public static readonly Event<int> OnWaypointPassed = new Event<int>(); // int: racer ID
+    public static Event<int> OnAIWaypointPassed { get; set; } = new Event<int>(); // int: racerID
+    public static Event OnPlayerWaypointPassed { get; } = new Event();
 
-    public static Event<Racer[]> OnSendRacerReferences { get; set; } = new Event<Racer[]>();
+    public static Event<Racer[]> OnSendRacerReferences { get; } = new Event<Racer[]>();
+
 }

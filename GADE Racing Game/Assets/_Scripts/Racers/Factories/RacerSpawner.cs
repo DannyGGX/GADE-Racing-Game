@@ -27,6 +27,7 @@ public class RacerSpawner : MonoBehaviour
         for (int i = 0; i < racerFactories.Length; i++)
         {
             racers[i] = racerFactories[i].CreateRacer();
+            racers[i].RacerID = i;
             racerFactories[i].ApplyStats();
         }
     }

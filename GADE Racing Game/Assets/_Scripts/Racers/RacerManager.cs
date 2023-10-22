@@ -22,6 +22,7 @@ public class RacerManager : MonoBehaviour
 
     private void Start()
     {
+        ApplyAIAttributes();
         DisableRacerInputs();
         this.Log("Call upon racer inputs to be disabled");
     }
@@ -34,8 +35,19 @@ public class RacerManager : MonoBehaviour
     {
         this.racers = new Racer[racers.Length];
         this.racers = racers;
+        this.Log($"Received Racers: {racers[0].RacerID}, {racers[1].RacerID}, {racers[2].RacerID}, {racers[3].RacerID}");
     }
 
+    private void ApplyAIAttributes() // Because AI script is disabled before this code can run on their script
+    {
+        foreach (var racer in racers)
+        {
+            if (racer is AI_Racer aiRacer)
+            {
+                aiRacer.ApplyRacerStats(); // Make sure they are applied in case this Start ran before AI_Racer Start
+            }
+        }
+    }
 
     private void DisableRacerInputs()
     {
@@ -51,6 +63,8 @@ public class RacerManager : MonoBehaviour
             }
         }
     }
+
+    
     private void EnableRacerInputs()
     {
         foreach (var racer in racers)
@@ -62,9 +76,8 @@ public class RacerManager : MonoBehaviour
             else // if racer is AI
             {
                 AI_Racer aiRacer = (AI_Racer)racer;
-                aiRacer.enabled = true;
-                aiRacer.ApplyRacerStats(); // Make sure they are applied in case this Start ran before AI_Racer Start
                 aiRacer.SetFirstDestination();
+                aiRacer.enabled = true;
             }
         }
     }

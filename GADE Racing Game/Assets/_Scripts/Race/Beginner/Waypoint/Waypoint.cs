@@ -11,14 +11,16 @@ public class Waypoint : MonoBehaviour
     {
         if (other.CompareTag("AI_Racer"))
         {
-            other.GetComponent<AI_Racer>().SetNextDestination();
+            AI_Racer aiRacer = other.GetComponent<AI_Racer>();
+            aiRacer.SetNextDestination();
+            EventManager.OnAIWaypointPassed.Invoke(aiRacer.RacerID);
             // send an event to PositionTracker or directly call PositionTracker and pass the racer id
             
         }
         else if (other.CompareTag("Player"))
         {
             // send an event to PositionTracker or directly call PositionTracker and pass the racer id
-            
+            EventManager.OnPlayerWaypointPassed.Invoke();
         }
     }
 
