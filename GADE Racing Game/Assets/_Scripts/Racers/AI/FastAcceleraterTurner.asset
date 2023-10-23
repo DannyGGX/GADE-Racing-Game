@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RacerColor: {r: 0.19517621, g: 0.6543928, b: 0.8113208, a: 0}
   BaseMaterial: {fileID: 2100000, guid: 110b9a3c862da594197f4ee03e2f8477, type: 2}
-  Speed: 13.5
-  AngularSpeed: 28
+  Speed: 17.82
+  AngularSpeed: 39.2
   Acceleration: 13
   AutoBraking: 0

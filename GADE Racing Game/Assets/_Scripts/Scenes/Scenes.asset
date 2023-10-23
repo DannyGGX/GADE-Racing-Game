@@ -23,3 +23,5 @@ MonoBehaviour:
     BuildIndex: 3
   - SceneName: 5
     BuildIndex: 4
+  - SceneName: 2
+    BuildIndex: 5

@@ -5,6 +5,12 @@ using UnityEngine;
 [System.Serializable]
 public class CheerState : SpectatorState
 {
+    public CheerState()
+    {
+        StateID = 2;
+        MinWaitTime = 6;
+        MaxWaitTime = 10;
+    }
 
     public override int EnterState()
     {

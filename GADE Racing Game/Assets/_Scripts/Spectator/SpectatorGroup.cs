@@ -81,7 +81,7 @@ public class SpectatorGroup : MonoBehaviour
 
         if (hasTriggeredCheering && numberOfRacersInCheerArea == 0)
         {
-            StopCheering();
+            //StopCheering();
             hasTriggeredCheering = false;
         }
     }

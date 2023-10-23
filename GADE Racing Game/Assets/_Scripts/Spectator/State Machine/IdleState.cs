@@ -5,6 +5,12 @@ using UnityEngine;
 [System.Serializable]
 public class IdleState : SpectatorState
 {
+    public IdleState()
+    {
+        StateID = 0;
+        MinWaitTime = 5;
+        MaxWaitTime = 10;
+    }
     public override int EnterState()
     {
         return StateID;
