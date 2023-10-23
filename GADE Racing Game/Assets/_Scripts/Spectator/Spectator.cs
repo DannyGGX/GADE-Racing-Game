@@ -4,17 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Controller to be put on each spectator or maybe group of spectators
+/// Controller to be put on each spectator
 /// </summary>
 public class Spectator : MonoBehaviour
 {
     private Animator animator;
     private const string animatorParameterName = "State";
     private static readonly int animatorParameter = Animator.StringToHash(animatorParameterName);
-    
     private SpectatorState currentState;
-
-    private Transform mainCameraTransform;
 
     private void Awake()
     {
@@ -22,11 +19,13 @@ public class Spectator : MonoBehaviour
         currentState = new DefaultState();
     }
 
+#region Billboarding Sprite
+
+    private Transform mainCameraTransform;
     private void Start()
     {
         mainCameraTransform = Camera.main.transform;
     }
-
     private void LateUpdate()
     {
         BillboardSprite();
@@ -41,13 +40,14 @@ public class Spectator : MonoBehaviour
         transform.LookAt(targetPosition, Vector3.up);
     }
 
+#endregion
+
     public void SetNextState()
     {
         currentState = currentState.Transition();
         SetAnimator(currentState.StateID);
         StartCoroutine(TickState(currentState.GetStateDuration()));
     }
-
     public void SetCheerState()
     {
         currentState = new CheerState();
@@ -55,7 +55,6 @@ public class Spectator : MonoBehaviour
         StopCoroutine(nameof(TickState));
         StartCoroutine(TickState(currentState.GetStateDuration()));
     }
-
     private void SetAnimator(int stateID)
     {
         animator.SetInteger(animatorParameter, stateID);

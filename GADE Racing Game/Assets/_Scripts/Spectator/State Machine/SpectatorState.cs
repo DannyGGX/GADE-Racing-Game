@@ -10,7 +10,6 @@ public abstract class SpectatorState
     public int MinWaitTime = 1;
     public int MaxWaitTime = 10;
     
-    
     public System.Random NumGenerator;
 
     protected SpectatorState()

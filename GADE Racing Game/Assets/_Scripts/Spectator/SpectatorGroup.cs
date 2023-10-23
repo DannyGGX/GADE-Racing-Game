@@ -19,7 +19,7 @@ public class SpectatorGroup : MonoBehaviour
     private float IndividualSpectatorCheerAnimationOffset = 0.08f;
     
     [Space] 
-    [SerializeField] private float speedThreshold;
+    [SerializeField] private float speedThreshold = 16;
     [Space]
     [SerializeField] private bool hideMesh;
 
