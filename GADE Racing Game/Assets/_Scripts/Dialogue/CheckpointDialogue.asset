@@ -13,9 +13,47 @@ MonoBehaviour:
   m_Name: CheckpointDialogue
   m_EditorClassIdentifier: 
   Conversation:
-  - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
-    Text: Checkpoints... is this race timed?
-    TextTypeSpeed: 20
   - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
-    Text: Yip. Goodluck
-    TextTypeSpeed: 20
+    Text: Well well well, who do we have here?
+    TextTypeSpeed: 29.2
+  - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
+    Text: Nice driving, I heard you guys were slick behind the wheel, I guess it
+      was true.
+    TextTypeSpeed: 31
+  - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
+    Text: "Pfft, we are more than slick, me and my crew are the best this side of\u2026
+      well this side of everywhere. Someone like YOU couldn\u2019t do the same."
+    TextTypeSpeed: 31.7
+  - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
+    Text: "Oh yeah, well if you\u2019re that good, I guess you won't mind a friendly
+      competition."
+    TextTypeSpeed: 31.7
+  - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
+    Text: As if, I don't want to be sitting here for the hour it would take you to
+      run this..
+    TextTypeSpeed: 32.4
+  - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
+    Text: "Ok well if the \u201Cbest\u201D is that scared of little ol me then you
+      probably weren't worth beating."
+    TextTypeSpeed: 31
+  - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
+    Text: Hmpf, alright fine, I'll bite what you got in mind?
+    TextTypeSpeed: 28.9
+  - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
+    Text: I go around the mountain, if i beat your time i win, and to spice things
+      up just a bit we can add a little wager.
+    TextTypeSpeed: 28.5
+  - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
+    Text: Alright first you had my interest, but now you have my attention.
+    TextTypeSpeed: 31.7
+  - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
+    Text: Then the loser refuels the other car, and winner gets to take a car mod
+      as a trophy.
+    TextTypeSpeed: 31.3
+  - Speaker: {fileID: 11400000, guid: 86ec6df4b23f85d4cb7ef7ac030621ac, type: 2}
+    Text: Alright, but when you lose I also want you to pay for a fresh set of wheels,
+      mine are starting to wear out. Deal?
+    TextTypeSpeed: 32
+  - Speaker: {fileID: 11400000, guid: 6ec5e1a46322a1d41983725859a7e2d5, type: 2}
+    Text: "Oh yeah, you\u2019re on."
+    TextTypeSpeed: 24.7

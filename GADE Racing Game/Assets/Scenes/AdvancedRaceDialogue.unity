@@ -770,6 +770,10 @@ PrefabInstance:
       value: Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 6209448364453994847, guid: d7fa00984b51bcd4b908f52f1b0734ca, type: 3}
+      propertyPath: nextScene
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209448364453994847, guid: d7fa00984b51bcd4b908f52f1b0734ca, type: 3}
       propertyPath: conversationSO
       value: 
       objectReference: {fileID: 11400000, guid: 42258cbb9fbe840489bba2b467e30bc3, type: 2}
