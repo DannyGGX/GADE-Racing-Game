@@ -6,4 +6,6 @@ using UnityEngine;
 public class Racer : MonoBehaviour
 {
     public int RacerID { get; set; }
+    
+    public AudioSource AudioSource { get; set; }
 }

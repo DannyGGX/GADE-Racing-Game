@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [System.Serializable]
 public class Sound
@@ -20,21 +21,7 @@ public class Sound
     [Range(0f, 1f)]
     public float SpatialBlend = 0.8f;
 
-    public SoundTypes SoundType;
+    [FormerlySerializedAs("SoundType")] public MixerGroups mixerGroup;
 
     [HideInInspector] public AudioSource audioSource;
-}
-
-public enum SoundTypes // To show which audio mixer to play from
-{
-    SFX,
-    Music,
-}
-public enum SoundNames
-{ 
-    Vroom,
-    Skkkr,
-
-    MenuMusic,
-    CkeckpointRaceMusic,
 }

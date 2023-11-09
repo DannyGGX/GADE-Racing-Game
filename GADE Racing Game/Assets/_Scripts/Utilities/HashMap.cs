@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 /// <typeparam name="Key"></typeparam>
 /// <typeparam name="Value"></typeparam>
-public class HashMap<Key, Value> where Key : Object where Value : Object
+public class HashMap<Key, Value>
 {
     private Hashtable hashTable;
 

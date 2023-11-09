@@ -37,7 +37,7 @@ public class AudioManager : MonoBehaviour
             sound.audioSource.volume = sound.Volume;
             sound.audioSource.pitch = sound.Pitch;
             sound.audioSource.loop = sound.Loop;
-            if (sound.SoundType == SoundTypes.SFX)
+            if (sound.mixerGroup == MixerGroups.SFX)
             {
                 sound.audioSource.outputAudioMixerGroup = sfxMixerGroup.MixerGroup;
             }
