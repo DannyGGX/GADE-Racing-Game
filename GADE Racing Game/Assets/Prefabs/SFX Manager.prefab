@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6efe27061ffc3ed4785ad1f0e5004780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxMixerGroup: {fileID: 11400000, guid: 230bc58bb76744f448e6863d30d24122, type: 2}
   audioCollections: []
 --- !u!1 &7649168824677356764
 GameObject:

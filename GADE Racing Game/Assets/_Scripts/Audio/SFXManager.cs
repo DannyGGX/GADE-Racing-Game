@@ -1,14 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class SFXManager : MonoBehaviour
 {
     public static SFXManager Instance { get; private set; }
-
-    [SerializeField] private AudioCollection[] audioCollections;
+    
+    [SerializeField] private AudioMixerGroupSO sfxMixerGroup; // for initialising the mixer group volume
+    [SerializeField, NotNull] private AudioCollection[] audioCollections;
     
     private HashMap<SoundNames, SoundSO> hashMap;
 
@@ -23,7 +25,8 @@ public class SFXManager : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
-
+        
+        sfxMixerGroup?.InitialiseMixerGroupVolume();
         EventManager.OnSendRacerReferences.Subscribe(GetRacerAudioSources);
         PopulateHashMap();
     }
@@ -44,6 +47,7 @@ public class SFXManager : MonoBehaviour
                 hashMap.Add(sound.SoundName, sound);
             }
         }
+        this.Log("HashMap populated. AudioSources might need to be set before this");
     }
 
     private void GetRacerAudioSources(Racer[] racers)
