@@ -18,13 +18,18 @@ public class Graph<T>
         Nodes.Add(node);
     }
 
-    public void AddEdge(GraphNode<T> nodeA, GraphNode<T> nodeB, float cost = 0)
+    public void AddEdge(GraphNode<T> nodeBeforeEdge, GraphNode<T> nodeAfterEdge, float cost = 0)
     {
-        if (Nodes.Contains(nodeA) && Nodes.Contains(nodeB))
+        if (Nodes.Contains(nodeBeforeEdge) && Nodes.Contains(nodeAfterEdge))
         {
-            Edges.Add(new Edge<T>(nodeA, nodeB, cost));
-            Edges.Add(new Edge<T>(nodeB, nodeA, cost));
+            Edges.Add(new Edge<T>(nodeBeforeEdge, nodeAfterEdge, cost));
+            //Edges.Add(new Edge<T>(nodeAfterEdge, nodeBeforeEdge, cost)); //don't need to go backwards
         }
+    }
+
+    public void AddEdge(Edge<T> edge)
+    {
+        Edges.Add(edge);
     }
     
     
