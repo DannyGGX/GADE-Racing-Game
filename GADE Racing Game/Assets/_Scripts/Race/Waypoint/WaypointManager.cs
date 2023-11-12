@@ -5,16 +5,15 @@ using UnityEngine;
 
 public abstract class WaypointManager : MonoBehaviour
 {
-    public static WaypointManager Instance { get; protected set; }
+    public static WaypointManager Instance { get; private set; }
     
     [SerializeField] private bool hideWaypointMeshes = true;
 
     protected void BaseAwake()
     {
-        
-        
-        //SetWaypointsId();
-        
+        if (Instance == null)
+            Instance = this;
+
 #if UNITY_EDITOR
         if (hideWaypointMeshes)
         {
@@ -24,14 +23,6 @@ public abstract class WaypointManager : MonoBehaviour
 #endif
         HideWaypointMeshes();
     }
-
-    // private void SetWaypointsId()
-    // {
-    //     for (int i = 0; i < waypointsArray.Length; i++)
-    //     {
-    //         waypointsArray[i].WaypointId = i;
-    //     }
-    // }
 
     protected abstract void HideWaypointMeshes();
     

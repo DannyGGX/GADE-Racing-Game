@@ -138,7 +138,7 @@ PrefabInstance:
     - target: {fileID: 5230377365751545133, guid: 935ee114e5f66c54db6de0131a0bb567, type: 3}
       propertyPath: WaypointAfterEdge
       value: 
-      objectReference: {fileID: 2026132627}
+      objectReference: {fileID: 708871789}
     - target: {fileID: 5230377365751545133, guid: 935ee114e5f66c54db6de0131a0bb567, type: 3}
       propertyPath: WaypointBeforeEdge
       value: 

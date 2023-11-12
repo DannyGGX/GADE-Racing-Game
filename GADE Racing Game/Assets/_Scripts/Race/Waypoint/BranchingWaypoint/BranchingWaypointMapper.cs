@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
+using Random = UnityEngine.Random;
 
 public class BranchingWaypointMapper : MonoBehaviour
 {
@@ -13,35 +13,28 @@ public class BranchingWaypointMapper : MonoBehaviour
     [SerializeField] private Waypoint lastWaypoint;
 
     private Graph<Waypoint> graph;
-
     private GraphNode<Waypoint> firstNode;
     private GraphNode<Waypoint> lastNode;
 
-    private Random random;
-
-    private void Awake()
-    {
-        random = new Random();
-        firstNode = new GraphNode<Waypoint>(FirstWaypoint);
-        lastNode = new GraphNode<Waypoint>(lastWaypoint);
-        
-        MapOutWaypoints();
-    }
-
-    private void MapOutWaypoints()
+    public void CreateGraphOfWaypoints()
     {
         graph = new Graph<Waypoint>();
+        
+        firstNode = new GraphNode<Waypoint>(FirstWaypoint);
+        lastNode = new GraphNode<Waypoint>(lastWaypoint);
 
         foreach (var trackEdge in trackEdges)
         {
             GraphNode<Waypoint> nodeBeforeEdge = new GraphNode<Waypoint>(trackEdge.WaypointBeforeEdge);
             GraphNode<Waypoint> nodeAfterEdge = new GraphNode<Waypoint>(trackEdge.WaypointAfterEdge);
-            trackEdge.GraphEdge = new Edge<Waypoint>(nodeBeforeEdge, nodeAfterEdge);
+            
+            Edge<Waypoint> graphEdge = new Edge<Waypoint>(nodeBeforeEdge, nodeAfterEdge);
             
             graph.AddNode(nodeBeforeEdge);
             graph.AddNode(nodeAfterEdge);
-            graph.AddEdge(trackEdge.GraphEdge);
+            graph.AddEdge(graphEdge);
         }
+        this.Log("Graph created");
     }
 
     public CustomLinkedList<Waypoint> ConstructRandomPath(out Node<Waypoint> head)
@@ -69,12 +62,11 @@ public class BranchingWaypointMapper : MonoBehaviour
             }
         
             // pick random edge
-            Edge<Waypoint> selectedEdge = possibleEdges[random.Next(0, possibleEdges.Count)];
+            Edge<Waypoint> selectedEdge = possibleEdges[Random.Range(0, possibleEdges.Count)];
             currentNode = selectedEdge.NodeAfterEdge;
             path.Add(currentNode.Data);
         }
         return path;
     }
-    
     
 }

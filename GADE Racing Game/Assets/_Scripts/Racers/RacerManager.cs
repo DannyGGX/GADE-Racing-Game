@@ -76,8 +76,8 @@ public class RacerManager : MonoBehaviour
             else // if racer is AI
             {
                 AI_Racer aiRacer = (AI_Racer)racer;
-                aiRacer.SetFirstDestination();
                 aiRacer.enabled = true;
+                aiRacer.SetFirstDestination();
             }
         }
     }

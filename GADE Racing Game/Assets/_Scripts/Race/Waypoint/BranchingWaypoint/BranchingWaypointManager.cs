@@ -13,15 +13,13 @@ public class BranchingWaypointManager : WaypointManager
     /// </summary>
     private List<CustomLinkedList<Waypoint>> waypointLinkedLists;
 
+    private int numberOfRacersWithoutWaypointRoute;
+
     private void Awake()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(this);
-        
         BaseAwake();
         mapper = GetComponent<BranchingWaypointMapper>();
+        mapper.CreateGraphOfWaypoints();
         EventManager.OnSendRacerReferences.Subscribe(GetAmountOfRacers);
     }
 
@@ -32,6 +30,7 @@ public class BranchingWaypointManager : WaypointManager
 
     private void GetAmountOfRacers(Racer[] racers)
     {
+        numberOfRacersWithoutWaypointRoute = racers.Length;
         waypointLinkedLists = new List<CustomLinkedList<Waypoint>>();
     }
 
@@ -49,12 +48,13 @@ public class BranchingWaypointManager : WaypointManager
         if (AreAllRoutesCreated())
             throw new NullReferenceException("All branching waypoint routes are taken");
 
+        numberOfRacersWithoutWaypointRoute--;
         waypointLinkedLists.Add(mapper.ConstructRandomPath(out var headNode));
         return headNode;
     }
 
     private bool AreAllRoutesCreated()
     {
-        return waypointLinkedLists[^1] != null; // ^1 means index end
+        return numberOfRacersWithoutWaypointRoute == 0;
     }
 }

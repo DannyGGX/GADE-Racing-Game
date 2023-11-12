@@ -11,13 +11,17 @@ public class AI_Racer : Racer
     [SerializeField] private NavMeshAgent navMeshAgent;
     [SerializeField] private MeshRenderer meshRenderer;
     public WaypointTracker WaypointTracker { get; private set; }
-    
-    private void Start()
+
+    private void Awake()
+    {
+        WaypointTracker = new WaypointTracker();
+    }
+
+    private void Start() // This is not called if this script is disabled using the RacerManager.
+                         // I have this code here in case of not using the RacerManager.
     {
         ApplyRacerStats();
-        WaypointTracker = new WaypointTracker();
         SetFirstDestination();
-        this.Log("AI racer Start() is called");
     }
 
     public void ApplyRacerStats()

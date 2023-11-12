@@ -27,10 +27,4 @@ public class WaypointTracker
     {
         return currentNode.Data.transform.position;
     }
-
-    public int GetCurrentWaypointId()
-    {
-        return currentNode.Data.WaypointId;
-    }
-
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class TrackEdge : MonoBehaviour
 {
-    public Edge<Waypoint> GraphEdge;
     public Waypoint WaypointBeforeEdge;
     public Waypoint WaypointAfterEdge;
 
