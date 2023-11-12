@@ -11,6 +11,7 @@ public class GraphNode<T>
     public GraphNode(T data)
     {
         Data = data;
+        Edges = new List<Edge<T>>();
     }
 
     public void ConnectEdge(Edge<T> edge)
