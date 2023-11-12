@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3884639687036564057
+--- !u!1 &2287249745683763486
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5431756544138623384}
-  - component: {fileID: 3045683372828520399}
+  - component: {fileID: 7982882813669535693}
+  - component: {fileID: 5230377365751545133}
   m_Layer: 0
-  m_Name: WaypointManager
+  m_Name: TrackEdge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5431756544138623384
+--- !u!4 &7982882813669535693
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3884639687036564057}
+  m_GameObject: {fileID: 2287249745683763486}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,21 +32,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3045683372828520399
+--- !u!114 &5230377365751545133
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3884639687036564057}
+  m_GameObject: {fileID: 2287249745683763486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d346b465909ba6049aec4265e9c5eb95, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c636dae726e4990b7b75ef29a1e37a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypointsArray:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  WaypointBeforeEdge: {fileID: 0}
+  WaypointAfterEdge: {fileID: 0}

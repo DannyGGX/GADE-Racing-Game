@@ -61,11 +61,11 @@ public class PositionTracker : MonoBehaviour
 
     private void GetFirstWaypoint()
     {
-        player.TargetWaypoint = WaypointManager.Instance.waypointLinkedList.Head;
+        player.TargetWaypoint = WaypointManager.Instance.GetWaypointLinkedListHead();
 
         foreach (var aiRacer in aiRacers)
         {
-            aiRacer.TargetWaypoint = WaypointManager.Instance.waypointLinkedList.Head;
+            aiRacer.TargetWaypoint = WaypointManager.Instance.GetWaypointLinkedListHead();
         }
     }
 

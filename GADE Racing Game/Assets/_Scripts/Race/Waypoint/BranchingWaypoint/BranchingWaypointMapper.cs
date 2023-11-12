@@ -6,15 +6,25 @@ using Random = System.Random;
 
 public class BranchingWaypointMapper : MonoBehaviour
 {
-    [SerializeField] private TrackEdge[] trackEdges;
+    [Tooltip("Edges don't need to be in any particular order")] 
+    public TrackEdge[] trackEdges;
+
+    [SerializeField] private Waypoint FirstWaypoint;
+    [SerializeField] private Waypoint lastWaypoint;
 
     private Graph<Waypoint> graph;
+
+    private GraphNode<Waypoint> firstNode;
+    private GraphNode<Waypoint> lastNode;
 
     private Random random;
 
     private void Awake()
     {
         random = new Random();
+        firstNode = new GraphNode<Waypoint>(FirstWaypoint);
+        lastNode = new GraphNode<Waypoint>(lastWaypoint);
+        
         MapOutWaypoints();
     }
 
@@ -34,12 +44,11 @@ public class BranchingWaypointMapper : MonoBehaviour
         }
     }
 
-    private CustomLinkedList<Waypoint> ConstructRandomPath(GraphNode<Waypoint> firstNode, GraphNode<Waypoint> lastNode)
+    public CustomLinkedList<Waypoint> ConstructRandomPath(out Node<Waypoint> head)
     {
-        // first node is the last node in a circuit race track
-
         CustomLinkedList<Waypoint> path = new CustomLinkedList<Waypoint>();
         path.Add(firstNode.Data);
+        head = path.Head;
 
         GraphNode<Waypoint> currentNode = firstNode;
 
@@ -50,13 +59,13 @@ public class BranchingWaypointMapper : MonoBehaviour
 
             foreach (var edge in currentNode.Edges)
             {
-                if (edge.NodeAfterEdge == currentNode) // this would mean that this edge is the edge before the current node
+                // Edges don't go backwards so I don't have to check that.
+                if (edge.NodeAfterEdge == currentNode) // this would mean that this edge is an edge before the current node
                     continue;
                 if (edge.NodeBeforeEdge == currentNode)
                 {
                     possibleEdges.Add(edge);
                 }
-                // Edges don't go backwards so I don't have to check that.
             }
         
             // pick random edge
@@ -64,7 +73,8 @@ public class BranchingWaypointMapper : MonoBehaviour
             currentNode = selectedEdge.NodeAfterEdge;
             path.Add(currentNode.Data);
         }
-
         return path;
     }
+    
+    
 }

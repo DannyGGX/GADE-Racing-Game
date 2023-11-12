@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-    
+
 public class TrackEdge : MonoBehaviour
 {
     public Edge<Waypoint> GraphEdge;

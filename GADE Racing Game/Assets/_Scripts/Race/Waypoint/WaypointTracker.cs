@@ -9,7 +9,7 @@ public class WaypointTracker
 
     public Vector3 GetFirstWaypointPosition()
     {
-        currentNode = WaypointManager.Instance.waypointLinkedList.Head;
+        currentNode = WaypointManager.Instance.GetWaypointLinkedListHead();
         return GetCurrentWaypointPosition();
     }
     public Vector3 GetNextWaypointPosition()

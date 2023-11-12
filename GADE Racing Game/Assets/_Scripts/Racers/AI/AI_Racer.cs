@@ -11,13 +11,11 @@ public class AI_Racer : Racer
     [SerializeField] private NavMeshAgent navMeshAgent;
     [SerializeField] private MeshRenderer meshRenderer;
     public WaypointTracker WaypointTracker { get; private set; }
-    private void Awake()
-    {
-        WaypointTracker = new WaypointTracker();
-    }
+    
     private void Start()
     {
         ApplyRacerStats();
+        WaypointTracker = new WaypointTracker();
         SetFirstDestination();
         this.Log("AI racer Start() is called");
     }

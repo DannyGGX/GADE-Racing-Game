@@ -2,25 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class WaypointManager : MonoBehaviour
+public abstract class WaypointManager : MonoBehaviour
 {
-    public static WaypointManager Instance { get; private set; }
-
-    [SerializeField] private Waypoint[] waypointsArray;
-    [SerializeField] private bool hideWaypointMeshes = true;
-    public CustomLinkedList<Waypoint> waypointLinkedList { get; private set; }
+    public static WaypointManager Instance { get; protected set; }
     
-    private void Awake()
+    [SerializeField] private bool hideWaypointMeshes = true;
+
+    protected void BaseAwake()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(this);
         
-        SetWaypointsId();
-        PopulateLinkedList();
+        
+        //SetWaypointsId();
         
 #if UNITY_EDITOR
         if (hideWaypointMeshes)
@@ -32,28 +25,15 @@ public class WaypointManager : MonoBehaviour
         HideWaypointMeshes();
     }
 
-    private void SetWaypointsId()
-    {
-        for (int i = 0; i < waypointsArray.Length; i++)
-        {
-            waypointsArray[i].WaypointId = i;
-        }
-    }
+    // private void SetWaypointsId()
+    // {
+    //     for (int i = 0; i < waypointsArray.Length; i++)
+    //     {
+    //         waypointsArray[i].WaypointId = i;
+    //     }
+    // }
 
-    private void HideWaypointMeshes()
-    {
-        foreach (var waypoint in waypointsArray)
-        {
-            waypoint.HideMesh();
-        }
-    }
+    protected abstract void HideWaypointMeshes();
     
-    private void PopulateLinkedList()
-    {
-        waypointLinkedList = new CustomLinkedList<Waypoint>();
-        foreach (var waypoint in waypointsArray)
-        {
-            waypointLinkedList.Add(waypoint);
-        }
-    }
+    public abstract Node<Waypoint> GetWaypointLinkedListHead();
 }
