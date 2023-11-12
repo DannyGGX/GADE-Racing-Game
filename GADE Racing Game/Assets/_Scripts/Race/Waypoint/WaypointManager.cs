@@ -13,6 +13,11 @@ public abstract class WaypointManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
+        else
+        {
+            this.LogError("Multiple instance of WaypointManagers");
+            Destroy(this);
+        }
 
 #if UNITY_EDITOR
         if (hideWaypointMeshes)
