@@ -18,6 +18,7 @@ public class RacerSpawner : MonoBehaviour
     {
         SendRacers();
         this.Log("Sent racer references");
+        Destroy(gameObject); // to free up memory
     }
 
     private void SpawnAndStoreRacers()
