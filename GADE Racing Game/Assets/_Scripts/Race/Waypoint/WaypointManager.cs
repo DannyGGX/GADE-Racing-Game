@@ -32,4 +32,20 @@ public abstract class WaypointManager : MonoBehaviour
     protected abstract void HideWaypointMeshes();
     
     public abstract Node<Waypoint> GetWaypointLinkedListHead();
+    
+    /// <summary>
+    /// Waypoints to be used by the position tracker.
+    /// </summary>
+    /// <returns> Head of the linked list of waypoints</returns>
+    public abstract Node<Waypoint> GetPositionTrackerWaypointHead();
+    
+    protected CustomLinkedList<Waypoint> PopulateLinkedList(Waypoint[] waypointsArray)
+    {
+         CustomLinkedList<Waypoint> waypointLinkedList = new CustomLinkedList<Waypoint>();
+        foreach (var waypoint in waypointsArray)
+        {
+            waypointLinkedList.Add(waypoint);
+        }
+        return waypointLinkedList;
+    }
 }

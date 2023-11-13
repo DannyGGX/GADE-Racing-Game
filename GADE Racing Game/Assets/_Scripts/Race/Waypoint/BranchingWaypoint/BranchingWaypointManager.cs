@@ -6,6 +6,11 @@ using UnityEngine;
 [RequireComponent(typeof(BranchingWaypointMapper))]
 public class BranchingWaypointManager : WaypointManager
 {
+    [SerializeField, Tooltip("Waypoints specifically for position tracker. This is where multi-branch wide waypoints are used")] 
+    private Waypoint[] positionTrackerWaypoints;
+
+    private CustomLinkedList<Waypoint> positionTrackerWaypointLinkedList;
+
     private BranchingWaypointMapper mapper;
 
     /// <summary>
@@ -35,4 +40,12 @@ public class BranchingWaypointManager : WaypointManager
         waypointLinkedLists.Add(mapper.ConstructRandomPath(out var headNode));
         return headNode;
     }
+
+    public override Node<Waypoint> GetPositionTrackerWaypointHead()
+    {
+        positionTrackerWaypointLinkedList = PopulateLinkedList(positionTrackerWaypoints);
+        return positionTrackerWaypointLinkedList.Head;
+    }
+    
+    
 }

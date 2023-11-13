@@ -12,7 +12,7 @@ public class LinearWaypointManager : WaypointManager
     private void Awake()
     {
         BaseAwake();
-        PopulateLinkedList();
+        waypointLinkedList = PopulateLinkedList(waypointsArray);
     }
 
     protected override void HideWaypointMeshes()
@@ -27,13 +27,9 @@ public class LinearWaypointManager : WaypointManager
     {
         return waypointLinkedList.Head;
     }
-    
-    private void PopulateLinkedList()
+
+    public override Node<Waypoint> GetPositionTrackerWaypointHead()
     {
-        waypointLinkedList = new CustomLinkedList<Waypoint>();
-        foreach (var waypoint in waypointsArray)
-        {
-            waypointLinkedList.Add(waypoint);
-        }
+        return waypointLinkedList.Head;
     }
 }
