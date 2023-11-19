@@ -10,7 +10,8 @@ public class TrackEdge : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (WaypointBeforeEdge == null || WaypointAfterEdge == null) return;
+        if (WaypointBeforeEdge == null || WaypointAfterEdge == null)
+            return;
         
         // draw connector line
         Gizmos.color = Color.green;
