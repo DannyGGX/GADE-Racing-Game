@@ -44,13 +44,16 @@ public class Spectator : MonoBehaviour
 
     public void SetNextState()
     {
+        if (currentState is CheerState)
+        {
+            this.Log("stop cheering");
+        }
         currentState = currentState.Transition();
         SetAnimator(currentState.StateID);
         StartCoroutine(TickState(currentState.GetStateDuration()));
     }
     public void SetCheerState()
     {
-        this.Log("Set cheer state");
         currentState = new CheerState();
         SetAnimator(currentState.StateID);
         StopCoroutine(nameof(TickState));
