@@ -771,7 +771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6209448364453994847, guid: d7fa00984b51bcd4b908f52f1b0734ca, type: 3}
       propertyPath: nextScene
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6209448364453994847, guid: d7fa00984b51bcd4b908f52f1b0734ca, type: 3}
       propertyPath: conversationSO

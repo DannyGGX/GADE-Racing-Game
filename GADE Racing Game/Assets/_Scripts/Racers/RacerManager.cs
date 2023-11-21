@@ -35,7 +35,7 @@ public class RacerManager : MonoBehaviour
     {
         this.racers = new Racer[racers.Length];
         this.racers = racers;
-        this.Log($"Received Racers: {racers[0].RacerID}, {racers[1].RacerID}, {racers[2].RacerID}, {racers[3].RacerID}");
+        this.Log($"Received racers");
     }
 
     private void ApplyAIAttributes() // Because AI script is disabled before this code can run on their script

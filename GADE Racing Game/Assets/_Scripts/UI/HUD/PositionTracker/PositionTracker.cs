@@ -17,7 +17,7 @@ public class PositionTracker : MonoBehaviour
         EventManager.OnPlayerWaypointPassed.Subscribe(PlayerWaypointPassed);
         EventManager.OnAIWaypointPassed.Subscribe(AIWaypointPassed);
         EventManager.OnSendRacerReferences.Subscribe(PopulateTrackerEntities);
-        this.Log("PositionTracker Awake() called");
+        this.Log("Subscribed to receive racer references");
     }
     private void OnDisable()
     {

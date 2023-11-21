@@ -20,8 +20,8 @@ public class BranchingWaypointManager : WaypointManager
 
     private void Awake()
     {
-        BaseAwake();
         mapper = GetComponent<BranchingWaypointMapper>();
+        BaseAwake(); // calls HideWaypointMeshes() which needs the mapper to access waypoints.
         mapper.CreateGraphOfWaypoints();
         waypointLinkedLists = new List<CustomLinkedList<Waypoint>>();
     }
@@ -32,6 +32,11 @@ public class BranchingWaypointManager : WaypointManager
         {
             trackEdge.WaypointBeforeEdge.HideMesh();
             trackEdge.WaypointAfterEdge.HideMesh();
+        }
+
+        foreach (var waypoint in positionTrackerWaypoints)
+        {
+            waypoint.HideMesh();
         }
     }
 

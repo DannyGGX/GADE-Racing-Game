@@ -69,7 +69,8 @@ PrefabInstance:
       value: Barrier (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5859259852128964746, guid: 0b6ad31dac152b3489e438c60205fe87, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -8391222552659086748, guid: 0b6ad31dac152b3489e438c60205fe87, type: 3}

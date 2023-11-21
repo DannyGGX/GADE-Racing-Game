@@ -127,8 +127,6 @@ public class SpectatorGroup : MonoBehaviour
 
     private IEnumerator IndividuallyChangeToCheerState()
     {
-        this.Log("Set cheer state");
-        
         foreach (var spectator in spectators)
         {
             spectator.SetCheerState();
@@ -138,8 +136,6 @@ public class SpectatorGroup : MonoBehaviour
 
     private IEnumerator IndividuallyChangeToNextState()
     {
-        this.Log("Set random state");
-        
         foreach (var spectator in spectators)
         {
             spectator.SetNextState();
