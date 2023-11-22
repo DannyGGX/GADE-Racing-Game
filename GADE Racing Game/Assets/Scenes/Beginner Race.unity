@@ -237,6 +237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6473375316536343841, guid: 035e2133a4e84364ea28b0b24beee2d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -345,7 +349,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &166227525
 Transform:
@@ -537,6 +541,10 @@ PrefabInstance:
     - target: {fileID: 1791310072433013062, guid: 8ae12592c5c2ff846a4770ca2f2e7f91, type: 3}
       propertyPath: m_Name
       value: Waypoint (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791310072433013062, guid: 8ae12592c5c2ff846a4770ca2f2e7f91, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -988,6 +996,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6473375316536343841, guid: 035e2133a4e84364ea28b0b24beee2d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1117,7 +1129,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &420540469
 Transform:
@@ -1269,6 +1281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Waypoint
       objectReference: {fileID: 0}
+    - target: {fileID: 1791310072433013062, guid: 8ae12592c5c2ff846a4770ca2f2e7f91, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1358,6 +1374,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint
       objectReference: {fileID: 0}
+    - target: {fileID: 6473375316536343841, guid: 035e2133a4e84364ea28b0b24beee2d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1446,6 +1466,10 @@ PrefabInstance:
     - target: {fileID: 6473375316536343841, guid: 035e2133a4e84364ea28b0b24beee2d5, type: 3}
       propertyPath: m_Name
       value: Checkpoint (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473375316536343841, guid: 035e2133a4e84364ea28b0b24beee2d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1679,6 +1703,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1791310072433013062, guid: 8ae12592c5c2ff846a4770ca2f2e7f91, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1767,6 +1795,10 @@ PrefabInstance:
     - target: {fileID: 6473375316536343841, guid: 035e2133a4e84364ea28b0b24beee2d5, type: 3}
       propertyPath: m_Name
       value: Checkpoint (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473375316536343841, guid: 035e2133a4e84364ea28b0b24beee2d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1913,6 +1945,10 @@ PrefabInstance:
     - target: {fileID: 6473375316536343841, guid: 035e2133a4e84364ea28b0b24beee2d5, type: 3}
       propertyPath: m_Name
       value: Checkpoint (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473375316536343841, guid: 035e2133a4e84364ea28b0b24beee2d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2177,6 +2213,10 @@ PrefabInstance:
     - target: {fileID: 6473375316536343841, guid: 035e2133a4e84364ea28b0b24beee2d5, type: 3}
       propertyPath: m_Name
       value: Checkpoint (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473375316536343841, guid: 035e2133a4e84364ea28b0b24beee2d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2599,6 +2639,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Waypoint (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1791310072433013062, guid: 8ae12592c5c2ff846a4770ca2f2e7f91, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2671,6 +2715,10 @@ PrefabInstance:
     - target: {fileID: 1791310072433013062, guid: 8ae12592c5c2ff846a4770ca2f2e7f91, type: 3}
       propertyPath: m_Name
       value: Waypoint (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791310072433013062, guid: 8ae12592c5c2ff846a4770ca2f2e7f91, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2937,6 +2985,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Waypoint (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1791310072433013062, guid: 8ae12592c5c2ff846a4770ca2f2e7f91, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3025,6 +3077,10 @@ PrefabInstance:
     - target: {fileID: 1791310072433013062, guid: 8ae12592c5c2ff846a4770ca2f2e7f91, type: 3}
       propertyPath: m_Name
       value: Waypoint (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791310072433013062, guid: 8ae12592c5c2ff846a4770ca2f2e7f91, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3180,7 +3236,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1592627743
 Transform:
@@ -3312,6 +3368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6473375316536343841, guid: 035e2133a4e84364ea28b0b24beee2d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3384,6 +3444,10 @@ PrefabInstance:
     - target: {fileID: 1791310072433013062, guid: 8ae12592c5c2ff846a4770ca2f2e7f91, type: 3}
       propertyPath: m_Name
       value: Waypoint (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791310072433013062, guid: 8ae12592c5c2ff846a4770ca2f2e7f91, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3593,6 +3657,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckpointManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2017773545797720879, guid: ce5d36e7fa121f74f93a3067346a8525, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5408883602013811156, guid: ce5d36e7fa121f74f93a3067346a8525, type: 3}
       propertyPath: checkpointsArray.Array.size
       value: 9
@@ -3780,6 +3848,10 @@ PrefabInstance:
     - target: {fileID: 3884639687036564057, guid: 968690c0d6677b6428a81269fdae2004, type: 3}
       propertyPath: m_Name
       value: WaypointManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884639687036564057, guid: 968690c0d6677b6428a81269fdae2004, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3903405462398108291, guid: 968690c0d6677b6428a81269fdae2004, type: 3}
       propertyPath: waypointsArray.Array.size
@@ -3971,6 +4043,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Checkpoint (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6473375316536343841, guid: 035e2133a4e84364ea28b0b24beee2d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4007,7 +4083,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1927875587
 Transform:
@@ -4042,10 +4118,10 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.8
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -4664,6 +4740,10 @@ PrefabInstance:
     - target: {fileID: 1791310072433013062, guid: 8ae12592c5c2ff846a4770ca2f2e7f91, type: 3}
       propertyPath: m_Name
       value: Waypoint (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791310072433013062, guid: 8ae12592c5c2ff846a4770ca2f2e7f91, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
