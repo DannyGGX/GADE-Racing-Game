@@ -19,7 +19,10 @@ public class BranchingWaypointMapper : MonoBehaviour
     private Graph<Waypoint> graph;
     private GraphNode<Waypoint> firstNode;
     private GraphNode<Waypoint> lastNode;
-
+    
+    /// <summary>
+    /// Used for detecting duplicate waypoint nodes in the trackEdges
+    /// </summary>
     private List<Waypoint> waypoints;
     
     public void CreateGraphOfWaypoints()
@@ -33,7 +36,7 @@ public class BranchingWaypointMapper : MonoBehaviour
             GraphNode<Waypoint> nodeBeforeEdge = new GraphNode<Waypoint>(trackEdge.WaypointBeforeEdge);
             GraphNode<Waypoint> nodeAfterEdge = new GraphNode<Waypoint>(trackEdge.WaypointAfterEdge);
 
-            if (waypoints.Contains(nodeBeforeEdge.Data) == false)
+            if (waypoints.Contains(nodeBeforeEdge.Data) == false) // check if the waypoint in the node is unique
             {
                 graph.AddNode(nodeBeforeEdge);
                 waypoints.Add(nodeBeforeEdge.Data);
@@ -66,6 +69,16 @@ public class BranchingWaypointMapper : MonoBehaviour
         }
         
         this.Log("Graph created");
+        FreeUpMemory();
+    }
+
+    private void FreeUpMemory()
+    {
+        foreach (var trackEdge in trackEdges)
+        {
+            Destroy(trackEdge.gameObject);
+        }
+        waypoints.Clear();
     }
 
     private GraphNode<Waypoint> SearchForNode(Waypoint waypoint)

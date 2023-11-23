@@ -45,7 +45,7 @@ public class Checkpoint : MonoBehaviour
         mesh.material = futureMaterial;
     }
 
-    private void SetAsPassed()
+    public void SetAsPassed()
     {
         currentCheckpointState = CheckpointStates.Passed;
         mesh.material = passedMaterial;
