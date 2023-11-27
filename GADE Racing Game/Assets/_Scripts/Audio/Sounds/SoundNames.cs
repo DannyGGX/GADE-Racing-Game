@@ -1,6 +1,7 @@
 public enum SoundNames
 { 
-    Vroom,
+    PlayerLoopingVroom,
+    AiLoopingVroom, // this sound is supposed to be 3D
     Skkkr,
     CheckpointPassed,
 

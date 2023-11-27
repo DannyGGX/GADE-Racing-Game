@@ -23,7 +23,7 @@ public class SoundSO : ScriptableObject
 
     [SerializeField] private bool loop = false;
 
-    [SerializeField, Tooltip("Amount of time needed to pass to play the sound again. Measured in seconds")] 
+    [SerializeField, Tooltip("Amount of time needed to pass to play the sound again. Measured in seconds. 0 = no delay limit")] 
     private float playAgainDelay = 0;
     private float nextPlayTime = 0;
     
@@ -93,6 +93,10 @@ public class SoundSO : ScriptableObject
         ConfigureSource(gameObject.AddComponent<AudioSource>());
     }
 
+    /// <summary>
+    /// To determine if enough time has passed for the sound to play again.
+    /// </summary>
+    /// <returns>response for if the sound is allowed to play</returns>
     private bool CanPlaySound()
     {
         if (playAgainDelay == 0) return true;
