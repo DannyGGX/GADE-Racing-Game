@@ -29,6 +29,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (currentCheckpointState == CheckpointStates.Target && other.CompareTag("Player"))
         {
+            //SFXManager.Instance.PlaySound(SoundNames.CheckpointPassed);
             SetAsPassed();
             onTargetCheckpointPassed.Invoke();
         }

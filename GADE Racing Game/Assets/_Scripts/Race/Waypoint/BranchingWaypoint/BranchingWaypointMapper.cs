@@ -51,7 +51,8 @@ public class BranchingWaypointMapper : MonoBehaviour
         foreach (var trackEdge in trackEdges)
         {
             Edge<Waypoint> graphEdge = new Edge<Waypoint>(SearchForNode(trackEdge.WaypointBeforeEdge),
-                SearchForNode(trackEdge.WaypointAfterEdge));
+                SearchForNode(trackEdge.WaypointAfterEdge)); // search through the nodes in the graph using the waypoint as the unique identifier
+                                                                            // nodes themselves can't be used as unique identifiers.
             graph.AddEdge(graphEdge);
         }
         
@@ -79,6 +80,7 @@ public class BranchingWaypointMapper : MonoBehaviour
             Destroy(trackEdge.gameObject);
         }
         waypoints.Clear();
+        waypoints.TrimExcess();
     }
 
     private GraphNode<Waypoint> SearchForNode(Waypoint waypoint)
@@ -93,6 +95,11 @@ public class BranchingWaypointMapper : MonoBehaviour
         return new GraphNode<Waypoint>(waypoint); // I don't think it is ever supposed to return this
     }
     
+    /// <summary>
+    /// Creating the routes that AI racers will travel on, on all laps of the race. It won't change during the race.
+    /// </summary>
+    /// <param name="head"></param>
+    /// <returns>Linked list to be stored in memory.</returns>
     public CustomLinkedList<Waypoint> ConstructRandomPath(out Node<Waypoint> head)
     {
         CustomLinkedList<Waypoint> path = new CustomLinkedList<Waypoint>();

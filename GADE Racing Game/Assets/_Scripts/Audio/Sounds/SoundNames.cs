@@ -2,6 +2,7 @@ public enum SoundNames
 { 
     Vroom,
     Skkkr,
+    CheckpointPassed,
 
     MenuMusic,
     CheckpointRaceMusic,

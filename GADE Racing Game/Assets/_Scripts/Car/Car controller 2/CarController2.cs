@@ -34,7 +34,7 @@ public class CarController2 : Racer
         currentAcceleration = maxAcceleration * InputController.GetAccelerationInput();
 
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (InputController.GetHandBrakeInput())
         {
             currentBrakeForce = maxBrakeForce;
 
