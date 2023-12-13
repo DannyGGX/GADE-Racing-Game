@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPosition: {fileID: 7684344445577682621}
-  BaseRacerPrefab: {fileID: 9057174461662324057, guid: f6fb00ee7273e64449f4c933cbbb3572, type: 3}
+  BaseRacerPrefab: {fileID: 4486988533160338338, guid: 514d350a05a193f41b78f1f1977447a7, type: 3}
 --- !u!1 &5991269833024628161
 GameObject:
   m_ObjectHideFlags: 0

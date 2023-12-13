@@ -53,7 +53,7 @@ public class RacerManager : MonoBehaviour
     {
         foreach (var racer in racers)
         {
-            if (racer is CarController2 player)
+            if (racer is CarController3 player)
             {
                 player.InputController = new NoInput();
             }
@@ -69,7 +69,7 @@ public class RacerManager : MonoBehaviour
     {
         foreach (var racer in racers)
         {
-            if (racer is CarController2 player)
+            if (racer is CarController3 player)
             {
                 player.InputController = new PlayerInput();
             }

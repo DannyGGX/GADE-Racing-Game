@@ -45,7 +45,7 @@ public class PositionTracker : MonoBehaviour
         
         foreach (var racer in racers)
         {
-            if (racer is CarController2)
+            if (racer is CarController3)
             {
                 player = new TrackingEntity(racer.RacerID, racer.transform);
             }

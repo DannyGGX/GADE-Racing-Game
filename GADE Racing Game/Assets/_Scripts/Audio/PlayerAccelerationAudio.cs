@@ -22,7 +22,7 @@ public class PlayerAccelerationAudio : MonoBehaviour
 
     private void GetPlayerInputControllerAndAudioSource()
     {
-        playerInput = GetComponentInParent<CarController2>().InputController;
+        playerInput = GetComponentInParent<CarController3>().InputController;
         audioSource = GetComponent<AudioSource>();
         rigidBody = GetComponentInParent<Rigidbody>();
         accelerationSound.ConfigureSource(audioSource);

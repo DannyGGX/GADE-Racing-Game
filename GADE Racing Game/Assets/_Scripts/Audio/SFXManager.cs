@@ -60,7 +60,7 @@ public class SFXManager : MonoBehaviour
             {
                 aiRacerAudioSources.Add(racer.GetComponentInChildren<AudioSource>());
             }
-            else if (racer is CarController2 player)
+            else if (racer is CarController3 player)
             {
                 playerAccelerationAudioSource = player.GetComponentInChildren<AudioSource>();
                 playerSecondaryAudioSource = player.GetComponent<AudioSource>();

@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody))]
-public class CarController3 : MonoBehaviour
+public class CarController3 : Racer
 {
-    [SerializeField, Tooltip("y-axis: Acceleration/ Torque | x-axis: current speed")] 
+    [SerializeField, Tooltip("y-axis: Acceleration/ Torque | x-axis: current rigidbody speed")] 
     private AnimationCurve accelerationCurve;
     
     [SerializeField, Tooltip("In degrees")] private float maxSteeringAngle = 25;
@@ -97,7 +97,6 @@ public class CarController3 : MonoBehaviour
     private void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
     {
         wheelCollider.GetWorldPose(out var position, out var rotation);
-        rotation.y += 90;
         wheelTransform.rotation = rotation;
         wheelTransform.position = position;
     }
