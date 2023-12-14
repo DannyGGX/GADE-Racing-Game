@@ -444,7 +444,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxSteeringAngle: 25
+  maxSteeringAngle: 35
   frontWheelsBrakeForce: 12000
   backWheelsBrakeForce: 12000
   frontLeftWheel: {fileID: 5973003293803705123}

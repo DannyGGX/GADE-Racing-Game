@@ -117,6 +117,7 @@ public class SpectatorGroup : MonoBehaviour
         StopCoroutine(nameof(IndividuallyChangeToNextState));
         StopCoroutine(nameof(IndividuallyChangeToCheerState));
         StartCoroutine(nameof(IndividuallyChangeToCheerState));
+        SFXManager.Instance.PlaySound3D(SoundNames.SpectatorCheer, transform.position);
     }
 
     private void StopCheering()

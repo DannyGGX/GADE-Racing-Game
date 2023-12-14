@@ -628,6 +628,63 @@ MonoBehaviour:
   perpDirRotated: {x: -0.99578273, y: 0, z: 0.09174333}
   markerStartUVY: 0.5058975
   customPoints: []
+--- !u!1001 &247330611
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 718414428712988566, guid: ef467ecdae3d55e4b887ba6dfbead9d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718414428712988566, guid: ef467ecdae3d55e4b887ba6dfbead9d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718414428712988566, guid: ef467ecdae3d55e4b887ba6dfbead9d0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718414428712988566, guid: ef467ecdae3d55e4b887ba6dfbead9d0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 718414428712988566, guid: ef467ecdae3d55e4b887ba6dfbead9d0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718414428712988566, guid: ef467ecdae3d55e4b887ba6dfbead9d0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718414428712988566, guid: ef467ecdae3d55e4b887ba6dfbead9d0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718414428712988566, guid: ef467ecdae3d55e4b887ba6dfbead9d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718414428712988566, guid: ef467ecdae3d55e4b887ba6dfbead9d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 718414428712988566, guid: ef467ecdae3d55e4b887ba6dfbead9d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5388710539956037344, guid: ef467ecdae3d55e4b887ba6dfbead9d0, type: 3}
+      propertyPath: m_Name
+      value: SFX Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef467ecdae3d55e4b887ba6dfbead9d0, type: 3}
 --- !u!114 &274880668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2778,11 +2835,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4096238456458089839, guid: 31f6918a2aeaa314faeeab456e8d0953, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852226331651945354, guid: 31f6918a2aeaa314faeeab456e8d0953, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8356127613984514915, guid: 31f6918a2aeaa314faeeab456e8d0953, type: 3}
       propertyPath: m_Name
       value: EndRace
       objectReference: {fileID: 0}
     - target: {fileID: 8356127613984514915, guid: 31f6918a2aeaa314faeeab456e8d0953, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657031802574374637, guid: 31f6918a2aeaa314faeeab456e8d0953, type: 3}
+      propertyPath: m_text
+      value: Checkpoint Race Won!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8691154694590712652, guid: 31f6918a2aeaa314faeeab456e8d0953, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 341.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056424751705445853, guid: 31f6918a2aeaa314faeeab456e8d0953, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -3644,6 +3721,10 @@ PrefabInstance:
     - target: {fileID: 1150910871812810584, guid: 0bdb24ea9e1d41446aa0f03c0570be02, type: 3}
       propertyPath: m_Name
       value: StartSequence
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150910871812810584, guid: 0bdb24ea9e1d41446aa0f03c0570be02, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6624276144106485729, guid: 0bdb24ea9e1d41446aa0f03c0570be02, type: 3}
       propertyPath: m_Pivot.x
@@ -5629,6 +5710,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5996348053362496521, guid: c379523f4eb126f4e94c16baa70bef33, type: 3}
+      propertyPath: onRaceFinish
+      value: 
+      objectReference: {fileID: 11400000, guid: ed18f4366d31df44391476f23c92a715, type: 2}
+    - target: {fileID: 5996348053362496521, guid: c379523f4eb126f4e94c16baa70bef33, type: 3}
+      propertyPath: <TotalRaceTime>k__BackingField
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6069,3 +6158,4 @@ SceneRoots:
   - {fileID: 1161668642}
   - {fileID: 379441408}
   - {fileID: 483146902}
+  - {fileID: 247330611}

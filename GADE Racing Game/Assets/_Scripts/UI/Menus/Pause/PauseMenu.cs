@@ -40,12 +40,14 @@ public class PauseMenu : MonoBehaviour
     {
         menuObject.SetActive(false);
         PauseManager.Instance.SetPauseState(false);
+        SFXManager.Instance?.PlaySound(SoundNames.ButtonClick);
     }
 
     public void GoToMainMenu()
     {
         PauseManager.Instance.SetPauseState(false);
         SceneManagerScript.Instance.LoadScene(Scenes.MainMenu);
+        SFXManager.Instance?.PlaySound(SoundNames.ButtonClick);
     }
 
     public void QuitGame()

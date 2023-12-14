@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
         //OptionsScreen.SetActive(false);
         MainScreen.SetActive(true);
         RacingGameModesScreen.SetActive(false);
+        SFXManager.Instance.PlaySound(SoundNames.ButtonClick);
     }
 
     public void GoToCredits()
@@ -33,21 +34,25 @@ public class MainMenu : MonoBehaviour
     {
         MainScreen.SetActive(false);
         RacingGameModesScreen.SetActive(true);
+        SFXManager.Instance.PlaySound(SoundNames.ButtonClick);
     }
 
     public void StartCheckpointDialogue()
     {
         SceneManagerScript.Instance.LoadScene(Scenes.Checkpoint_Dialogue);
+        SFXManager.Instance.PlaySound(SoundNames.ButtonClick);
     }
 
     public void StartBeginnerDialogue()
     {
         SceneManagerScript.Instance.LoadScene(Scenes.Beginner_Dialogue);
+        SFXManager.Instance.PlaySound(SoundNames.ButtonClick);
     }
 
     public void StartAdvancedDialogue()
     {
         SceneManagerScript.Instance.LoadScene(Scenes.Advanced_Dialogue);
+        SFXManager.Instance.PlaySound(SoundNames.ButtonClick);
     }
 
     public void QuitGame()

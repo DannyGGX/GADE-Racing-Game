@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,9 @@ public class CountDownTimer : MonoBehaviour
     
     [field: SerializeField, Tooltip("Measured in seconds. The amount of time added when passing each checkpoint")] 
     public float CheckpointsTimeAdd { get; private set; }
+
+    [SerializeField, Tooltip("The amount of time left at the end of the race. If time left >= winningTime, win race, else pass race.")]
+    private float winningTime = 25;
     
     [SerializeField] private TimerUI timerUI;
     
@@ -16,7 +20,18 @@ public class CountDownTimer : MonoBehaviour
     private bool isRaceActive = false;
     
     [SerializeField] private EventSenderSO onRaceLose;
-    
+    [SerializeField] private EventSenderSO onRaceFinish;
+
+    private void OnEnable()
+    {
+        EventManager.OnDetermineIfWinRace.Subscribe(DetermineIfWinRace);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnDetermineIfWinRace.Unsubscribe(DetermineIfWinRace);
+    }
+
     private void FixedUpdate()
     {
         if(isRaceActive)
@@ -60,5 +75,17 @@ public class CountDownTimer : MonoBehaviour
     public void FreezeTimer() // called when race is completed
     {
         isRaceActive = false;
+    }
+
+    private void DetermineIfWinRace() // called when last lap is completed
+    {
+        if (currentTime >= winningTime)
+        {
+            onRaceFinish.Invoke();
+        }
+        else
+        {
+            EventManager.OnRacePassed.Invoke();
+        }
     }
 }

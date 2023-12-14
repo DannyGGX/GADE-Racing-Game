@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -11,7 +10,7 @@ using UnityEngine.Serialization;
 [RequireComponent(typeof(AudioSource))]
 public class AudioCollection : MonoBehaviour
 {
-    [NotNull] public AudioSource AudioPlayerSource;
+    [HideInInspector] public AudioSource AudioSource;
     public SoundSO[] Sounds;
 
     private void Awake()
@@ -21,9 +20,10 @@ public class AudioCollection : MonoBehaviour
 
     private void SetAudioSourceForEachSound()
     {
+        AudioSource = GetComponent<AudioSource>();
         foreach (var sound in Sounds)
         {
-            sound.AudioSource = AudioPlayerSource;
+            sound.AudioSource = AudioSource;
         }
         this.Log("SoundSOs AudioSources are set");
     }

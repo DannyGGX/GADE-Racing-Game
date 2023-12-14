@@ -13,5 +13,9 @@ public static class EventManager
     public static Event OnPlayerWaypointPassed { get; } = new Event();
 
     public static Event<Racer[]> OnSendRacerReferences { get; } = new Event<Racer[]>();
+    public static Event<int> OnSendNumberOfLaps { get; } = new();
 
+    public static Event OnDetermineIfWinRace { get; } = new();
+
+    public static Event OnRacePassed { get; } = new();
 }

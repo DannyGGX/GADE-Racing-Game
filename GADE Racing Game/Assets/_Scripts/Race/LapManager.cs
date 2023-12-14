@@ -6,15 +6,16 @@ using UnityEngine;
 public class LapManager : MonoBehaviour
 {
     [SerializeField] private int totalLaps = 1;
-    private int currentLap = 1;
+    public int currentLap { get; private set; } = 1;
     [SerializeField] private LapCounterUI lapCounterUI;
     
     [SerializeField] private EventSenderSO onRaceFinished;
     [SerializeField] private EventSenderSO onNextLap;
 
-    private void Awake()
+    private void Start()
     {
         lapCounterUI?.Initialize(totalLaps);
+        EventManager.OnSendNumberOfLaps.Invoke(totalLaps);
     }
 
     public void HandleLapEnd()
@@ -33,6 +34,6 @@ public class LapManager : MonoBehaviour
 
     private void FinishRace()
     {
-        onRaceFinished.Invoke();
+        EventManager.OnDetermineIfWinRace.Invoke();
     }
 }

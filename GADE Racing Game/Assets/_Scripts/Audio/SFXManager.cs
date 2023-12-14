@@ -1,16 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class SFXManager : MonoBehaviour
 {
     public static SFXManager Instance { get; private set; }
     
     [SerializeField] private AudioMixerGroupSO sfxMixerGroup; // for initialising the mixer group volume
-    [SerializeField, NotNull] private AudioCollection[] audioCollections;
+    [SerializeField] private AudioCollection[] audioCollections;
     
     private HashMap<SoundNames, SoundSO> hashMap;
 
@@ -76,11 +74,23 @@ public class SFXManager : MonoBehaviour
         sound.PlaySFX();
     }
 
+    public void PlaySound3D(SoundNames soundName, Vector3 position)
+    {
+        SoundSO sound = hashMap.GetValue(soundName);
+        sound.ConfigureSource(sound.AudioSource);
+        sound.PlaySFX3D(position);
+    }
+
     public void PlayLoopingSound(SoundNames soundName)
     {
         SoundSO sound = hashMap.GetValue(soundName);
         sound.ConfigureSource(sound.AudioSource);
         sound.PlaySound(); // uses AudioSource.Play() and not PlayOneShot() which doesn't loop
+    }
+
+    public SoundSO GetSound(SoundNames soundName)
+    {
+        return hashMap.GetValue(soundName);
     }
 }
 
