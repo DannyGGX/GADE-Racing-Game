@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPosition: {fileID: 7468251326301843080}
-  BaseRacerPrefab: {fileID: 6998205654918577305, guid: 8c3d3b5ab56de994597d9e14a7125645, type: 3}
+  BaseRacerPrefab: {fileID: 4161192761062950104, guid: 11b411a2c714ae840ac3d89a9333a437, type: 3}
   RacerStats: {fileID: 11400000, guid: 73558bff85612d9469c892b526ee97d7, type: 2}
 --- !u!1 &1539793935631452526
 GameObject:
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPosition: {fileID: 5493618753639945285}
-  BaseRacerPrefab: {fileID: 6998205654918577305, guid: 8c3d3b5ab56de994597d9e14a7125645, type: 3}
+  BaseRacerPrefab: {fileID: 4161192761062950104, guid: 11b411a2c714ae840ac3d89a9333a437, type: 3}
   RacerStats: {fileID: 11400000, guid: 1582b2c4111a5004282b8d86da4d684f, type: 2}
 --- !u!1 &3418108850179492246
 GameObject:
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPosition: {fileID: 3105590185722637515}
-  BaseRacerPrefab: {fileID: 6998205654918577305, guid: 8c3d3b5ab56de994597d9e14a7125645, type: 3}
+  BaseRacerPrefab: {fileID: 4161192761062950104, guid: 11b411a2c714ae840ac3d89a9333a437, type: 3}
   RacerStats: {fileID: 11400000, guid: 4e926d04002cf8640abb84c8d6a69e77, type: 2}
 --- !u!1 &3647828096110154930
 GameObject:

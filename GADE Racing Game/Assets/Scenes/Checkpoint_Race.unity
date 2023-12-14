@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: ed5dd8a698417fe4ba87716da1fffcb0, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.32107174, g: 0.21133253, b: 0.40438062, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6263,6 +6263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track1
       objectReference: {fileID: 0}
+    - target: {fileID: 8305158241851514670, guid: 456042a2a29a85f4bad7d4262b5b0622, type: 3}
+      propertyPath: m_MaterialTemplate
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 4afde70783052e542a44766b3a186af9, type: 3}
     - target: {fileID: 9121582794697022609, guid: 456042a2a29a85f4bad7d4262b5b0622, type: 3}
       propertyPath: m_Mesh
       value: 

@@ -9,7 +9,7 @@ public class AI_Racer : Racer
     public AI_StatsSO RacerStats;
     
     [SerializeField] private NavMeshAgent navMeshAgent;
-    [SerializeField] private MeshRenderer meshRenderer;
+    public Transform modelPosition;
     public WaypointTracker WaypointTracker { get; private set; }
 
     private void Awake()
@@ -27,11 +27,11 @@ public class AI_Racer : Racer
     public void ApplyRacerStats()
     {
         ApplyCarMovementStats();
-        AddRacerColor();
+        AddCarModel();
     }
-    private void AddRacerColor()
-    { 
-        meshRenderer.material.color = RacerStats.RacerColor;
+    private void AddCarModel()
+    {
+        Instantiate(RacerStats.CarModel, modelPosition.position , modelPosition.rotation, modelPosition);
     }
     private void ApplyCarMovementStats()
     {

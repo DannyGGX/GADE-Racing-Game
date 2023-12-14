@@ -558,7 +558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RacerStats: {fileID: 0}
   navMeshAgent: {fileID: 338527074901059937}
-  meshRenderer: {fileID: 4521972414093686522}
+  modelPosition: {fileID: 0}
 --- !u!195 &338527074901059937
 NavMeshAgent:
   m_ObjectHideFlags: 0
